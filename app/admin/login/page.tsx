@@ -1,0 +1,7 @@
+import type { Metadata } from "next";
+import Image from "next/image";
+import Link from "next/link";
+import { ShieldCheck } from "lucide-react";
+import { AdminLoginForm } from "@/components/admin-login-form";
+export const metadata: Metadata = { title: "เข้าสู่ระบบผู้ดูแล", robots: { index: false, follow: false } };
+export default function AdminLoginPage() { return <main className="grid min-h-screen place-items-center bg-[var(--secondary)] p-5"><section className="w-full max-w-md rounded-3xl border border-[var(--border)] bg-white p-7 shadow-[var(--shadow)] sm:p-9"><Link href="/" className="flex items-center gap-3" aria-label="กลับหน้าหลัก"><Image src="/brand/rcopt-crest.png" alt="ตรา RCOPT" width={42} height={56} className="h-14 w-auto object-contain" /><span><strong className="block">RCOPT</strong><span className="text-xs text-[var(--muted)]">Admin CMS</span></span></Link><div className="mt-8 flex items-center gap-3"><span className="grid h-11 w-11 place-items-center rounded-2xl bg-[var(--primary-light)] text-[var(--primary)]"><ShieldCheck size={21} /></span><div><h1 className="text-2xl font-extrabold">เข้าสู่ระบบผู้ดูแล</h1><p className="text-sm text-[var(--muted)]">สำหรับผู้ดูแลระบบที่ได้รับอนุญาต</p></div></div><AdminLoginForm /><Link href="/admin/forgot-password" className="mt-6 block text-center text-sm font-bold text-[var(--primary-dark)]">ลืมรหัสผ่าน?</Link></section></main>; }
