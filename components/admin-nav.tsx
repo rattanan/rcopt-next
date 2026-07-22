@@ -1,10 +1,10 @@
 "use client";
 
 import Link from "next/link";
-import { FileText, Image as ImageIcon, LayoutDashboard } from "lucide-react";
+import { FileText, Image as ImageIcon, LayoutDashboard, Users } from "lucide-react";
 import { usePathname } from "next/navigation";
 
-const items = [{ href: "/admin", label: "ภาพรวม", icon: LayoutDashboard, exact: true }, { href: "/admin/articles", label: "บทความและข่าว", icon: FileText }, { href: "/admin/banners", label: "แบนเนอร์", icon: ImageIcon }];
+const items = [{ href: "/admin", label: "ภาพรวม", icon: LayoutDashboard, exact: true }, { href: "/admin/users", label: "ผู้ใช้และโปรไฟล์", icon: Users }, { href: "/admin/articles", label: "บทความและข่าว", icon: FileText }, { href: "/admin/banners", label: "แบนเนอร์", icon: ImageIcon }];
 
 export function AdminNav() {
   const pathname = usePathname();

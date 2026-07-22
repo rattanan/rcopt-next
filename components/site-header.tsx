@@ -2,13 +2,12 @@ import Link from "next/link";
 import Image from "next/image";
 import { LogIn, UserRound } from "lucide-react";
 import { NavigationMenu } from "./navigation-menu";
-import { getActiveAdminHeaderIdentity } from "@/lib/auth/guards";
-import { getActiveDoctorIdentity } from "@/lib/auth/guards";
+import { getActiveAdminHeaderIdentity, getActiveMemberIdentity } from "@/lib/auth/guards";
 import { getPublicMenu } from "@/repositories/menu-repository";
 
 export async function SiteHeader() {
-  const [menu, doctorIdentity, adminIdentity] = await Promise.all([getPublicMenu(), getActiveDoctorIdentity(), getActiveAdminHeaderIdentity()]);
-  const identity = doctorIdentity ? { firstName: doctorIdentity.firstName, href: "/community/questions" } : adminIdentity ? { firstName: adminIdentity.firstName, href: "/admin" } : undefined;
+  const [menu, memberIdentity, adminIdentity] = await Promise.all([getPublicMenu(), getActiveMemberIdentity(), getActiveAdminHeaderIdentity()]);
+  const identity = adminIdentity ? { firstName: adminIdentity.firstName, href: "/admin" } : memberIdentity ? { firstName: memberIdentity.firstName, href: memberIdentity.isSuperuser ? "/admin" : "/profile" } : undefined;
 
   return (
     <header className="sticky top-0 z-20 border-b border-[var(--border)] bg-white/95 backdrop-blur">
