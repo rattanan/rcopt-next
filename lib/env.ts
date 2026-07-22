@@ -9,7 +9,6 @@ const envSchema = z.object({
   LEGACY_ASSET_BASE_URL: z.string().url().or(z.literal("")).default("https://www.rcopt.org"),
   LEGACY_UPLOAD_PATH: z.string().default(""),
   ADMIN_WRITE_ENABLED: z.enum(["true", "false"]).default("false").transform((value) => value === "true"),
-  ADMIN_SESSION_SECRET: z.string().default(""),
   ADMIN_SESSION_STORE_PATH: z.string().default(".runtime/admin-sessions.json"),
 });
 
@@ -22,6 +21,5 @@ export const env = envSchema.parse({
   LEGACY_ASSET_BASE_URL: process.env.LEGACY_ASSET_BASE_URL,
   LEGACY_UPLOAD_PATH: process.env.LEGACY_UPLOAD_PATH,
   ADMIN_WRITE_ENABLED: process.env.ADMIN_WRITE_ENABLED,
-  ADMIN_SESSION_SECRET: process.env.ADMIN_SESSION_SECRET,
   ADMIN_SESSION_STORE_PATH: process.env.ADMIN_SESSION_STORE_PATH,
 });

@@ -27,8 +27,8 @@ The old `activkey` is used by the Yii User module for activation/recovery. The N
 1. Compatibility verification may compare `md5(password)` only on the server for an active `superuser=1` account.
 2. Do not automatically rehash or update `tbl_users.password`; the legacy application still depends on MD5.
 3. Only active superusers are eligible for the initial Admin CMS. Standard members and doctors do not receive CMS access merely because they are active.
-4. A Next.js session must contain only a minimal user id, username, role marker, issued/expiry values, and a session identifier. It must use `httpOnly`, `sameSite=lax`, `secure` in production, expiry, rotation after login, CSRF protection for mutations, and generic authentication errors.
-5. Because no usable persistent legacy session table exists, production deployment needs an approved server-side session store. A process-local store is not acceptable for multiple instances or restarts. Until that deployment dependency is configured, Admin write operations remain blocked by `ADMIN_WRITE_ENABLED=false`.
+4. A Next.js session contains only a minimal user id, username, issued/expiry values, and an opaque session identifier. The server stores only the SHA-256 hash of that identifier in `ADMIN_SESSION_STORE_PATH`; the cookie is `httpOnly`, `sameSite=lax`, `secure` in production, expires after 12 hours, and is rotated after login. Login uses a short-lived `httpOnly`, `sameSite=strict` CSRF cookie and validates the request origin.
+5. The approved session store for this deployment is an atomic, permission-restricted text JSON file. Production must mount the same persistent, access-restricted path at `ADMIN_SESSION_STORE_PATH` for every application instance. A per-container ephemeral path is not acceptable for restart recovery or multi-instance deployment. Admin write operations remain blocked by `ADMIN_WRITE_ENABLED=false`.
 6. `/admin/forgot-password` and `/admin/reset-password` must stay informational in this phase: instruct the user to contact an administrator. No reset token table may be created.
 
 ## Legacy admin URLs and controls

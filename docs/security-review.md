@@ -6,7 +6,7 @@ Status: discovery baseline, 22 July 2026.
 |---|---|---|
 | Critical | Legacy account passwords use unsalted MD5. | Never use MD5 for new credentials. Restrict compatibility verification to active superusers, use generic errors and rate limits, and do not auto-upgrade while Yii remains active. |
 | High | Legacy RBAC tables exist but contain no roles or assignments. | Enforce the verified `superuser=1` boundary centrally. Do not infer editor/doctor permissions. |
-| High | No approved persistent server-side session store was found in the schema. | Keep `ADMIN_WRITE_ENABLED=false`; obtain/configure an approved session store before production Admin sessions and writes. |
+| High | Legacy schema has no persistent session table. | A file-backed opaque session store is implemented. Production must mount one persistent, access-restricted path shared by all instances; keep `ADMIN_WRITE_ENABLED=false` until this is verified. |
 | High | Legacy uploads save client filenames directly beneath web-served directories. | Keep new uploads disabled until MIME validation, randomized naming, safe shared path, and cleanup behavior are implemented and tested. |
 | High | Legacy HTML can contain externally sourced markup. | Continue server-side sanitization with strict iframe and URL allowlists; sanitize before any Admin preview/save path. |
 | Medium | Legacy source has no failed-login counter or lockout record. | Add deployment-safe rate limiting and generic login errors without schema changes. |
