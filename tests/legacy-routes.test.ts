@@ -1,0 +1,15 @@
+import { describe, expect, it } from "vitest";
+import { mapLegacyRoute } from "@/lib/legacy-routes";
+
+describe("legacy URL compatibility", () => {
+  it("maps public doctor and content routes", () => {
+    expect(mapLegacyRoute("users/profile", "42")).toBe("/doctors/42");
+    expect(mapLegacyRoute("arart010/list", "1")).toBe("/news");
+    expect(mapLegacyRoute("arart010/list", "2")).toBe("/articles?category=2");
+    expect(mapLegacyRoute("arart010/detail", "2235")).toBe("/articles/2235");
+  });
+
+  it("does not manufacture a destination for unsafe ids", () => {
+    expect(mapLegacyRoute("users/profile", "x")).toBeUndefined();
+  });
+});

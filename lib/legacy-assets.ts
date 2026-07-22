@@ -5,8 +5,12 @@ export type LegacyAssetArea = "uploads" | "banner";
 const PLACEHOLDER = "/brand/rcopt-crest.png";
 
 function isSafeRelativePath(value: string): boolean {
-  const decoded = decodeURIComponent(value);
-  return !decoded.startsWith("/") && !decoded.includes("\\") && !decoded.split("/").includes("..");
+  try {
+    const decoded = decodeURIComponent(value);
+    return !decoded.startsWith("/") && !decoded.includes("\\") && !decoded.split("/").includes("..");
+  } catch {
+    return false;
+  }
 }
 
 export function resolveLegacyAsset(
