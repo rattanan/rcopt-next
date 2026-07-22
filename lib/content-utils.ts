@@ -26,7 +26,7 @@ export function sanitizeLegacyHtml(value: string | null | undefined): string {
     transformTags: {
       a: (tagName, attribs) => ({ tagName, attribs: { ...attribs, target: "_blank", rel: "noopener noreferrer" } }),
       img: (tagName, attribs) => ({ tagName, attribs: { ...attribs, src: resolveLegacyAsset(attribs.src, "uploads") } }),
-      iframe: (tagName, attribs) => { const src = toSafeYouTubeEmbed(attribs.src); return src ? { tagName, attribs: { src, title: attribs.title || "YouTube video", loading: "lazy", referrerpolicy: "strict-origin-when-cross-origin", allow: "accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share", allowfullscreen: "" } } : { tagName: "span", attribs: {} }; },
+      iframe: (tagName, attribs) => { const src = toSafeYouTubeEmbed(attribs.src); const safeAttributes: Record<string, string> = src ? { src, title: attribs.title || "YouTube video", loading: "lazy", referrerpolicy: "strict-origin-when-cross-origin", allow: "accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share", allowfullscreen: "" } : { class: "legacy-embed-removed" }; return { tagName: src ? tagName : "span", attribs: safeAttributes }; },
     },
   });
 }
