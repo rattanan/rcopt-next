@@ -9,7 +9,8 @@ The compatibility handler maps the highest-value read-only routes below. Unknown
 | `arart010/list&id=1` | `/news` | mapped |
 | `arart010/list&id=N` | `/articles?category=N` | mapped |
 | `arart010/detail&id=N` | `/articles/N` | mapped |
-| `wbtpc010/list&id=N` | — | deferred; returns 404 until a public discussion/Job Center design is approved |
-| `wbtpc010/detail&id=N` | — | deferred; returns 404 until a public discussion detail is approved |
+| `wbtpc010/list&id=1` | `/community/questions` | mapped; public consultation board, read-only |
+| `wbtpc010/detail&id=N` | `/community/questions/N` | mapped; category and public status are verified at render time |
+| `wbtpc010/list&id=2` | — | deferred Job Center |
 
 Do not add permanent redirects for account, admin, form-submission, or other authenticated/mutating legacy URLs until their public behavior and security requirements are reviewed.

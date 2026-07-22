@@ -14,7 +14,7 @@ const doctorSearchSchema = z.object({
 export type DoctorSearchParams = { keyword?: string; hospital?: string; provinceId?: number; specialtyId?: number; page: number; valid: boolean };
 
 export function parseDoctorSearchParams(input: Record<string, string | string[] | undefined>): DoctorSearchParams {
-  const normalized = Object.fromEntries(Object.entries(input).map(([key, value]) => [key, Array.isArray(value) ? value[0] : value]));
+  const normalized = Object.fromEntries(Object.entries(input).map(([key, value]) => { const first = Array.isArray(value) ? value[0] : value; return [key, first?.trim() === "" ? undefined : first]; }));
   const result = doctorSearchSchema.safeParse(normalized);
   if (!result.success) return { page: 1, valid: false };
   return { keyword: result.data.keyword, hospital: result.data.hospital, provinceId: result.data.province, specialtyId: result.data.specialty, page: result.data.page ?? 1, valid: true };
