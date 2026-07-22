@@ -1,0 +1,28 @@
+BEGIN:VCALENDAR
+PRODID:-//Google Inc//Google Calendar 70.9054//EN
+VERSION:2.0
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+X-WR-CALNAME:Academic-meeting Day 2
+X-WR-TIMEZONE:Asia/Bangkok
+X-WR-CALDESC:Day 2 : Thursday 10 July 2014
+BEGIN:VEVENT
+DTSTART:20140710T013000Z
+DTEND:20140710T030000Z
+DTSTAMP:20140707T034026Z
+UID:tm2uqctcndka0u9lldppdfc098@google.com
+CREATED:20140704T065722Z
+DESCRIPTION:Refractive Surgery\nChairman: Manapon Lekskul\nCo-chairman:  Wi
+ wan  Sansanayudh\nComplex corneas and laser treatment- Jung-Sub Kim (Korea)
+ \nOutcomes of ReLex in Thailand  - Ekktet Chanseu (Thailand)\nIOL calculati
+ on after laser refractive surgery- Sabong Srivannaboon (Thailand)\nLaser as
+ tigmatic correction- Varintorn Chuckpaiwong (Thailand)\nDevelopment in the 
+ correction of presbyopia - Vivat Komolsuradej (Thailand)
+LAST-MODIFIED:20140704T065723Z
+LOCATION:Convention A
+SEQUENCE:0
+STATUS:CONFIRMED
+SUMMARY:SYM 4-PL: Cornea
+TRANSP:OPAQUE
+END:VEVENT
+END:VCALENDAR

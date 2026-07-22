@@ -33,6 +33,6 @@ export async function POST(request: Request) {
     const directory = path.join(env.LEGACY_UPLOAD_PATH, "uploads");
     await mkdir(directory, { recursive: true });
     await writeFile(path.join(directory, filename), data, { flag: "wx" });
-    return NextResponse.json({ url: `/api/legacy-assets/uploads/${encodeURIComponent(filename)}` });
+    return NextResponse.json({ url: `/images/uploads/${encodeURIComponent(filename)}` });
   } catch { return NextResponse.json({ error: "ไม่สามารถอัปโหลดรูปภาพได้" }, { status: 500 }); }
 }

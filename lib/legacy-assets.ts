@@ -1,5 +1,3 @@
-import { env } from "@/lib/env";
-
 export type LegacyAssetArea = "uploads" | "banner" | "member" | "banners" | "banner2019";
 
 const PLACEHOLDER = "/brand/rcopt-crest.png";
@@ -16,7 +14,7 @@ function isSafeRelativePath(value: string): boolean {
 export function resolveLegacyAsset(
   path: string | null | undefined,
   area: LegacyAssetArea,
-  baseUrl = env.LEGACY_ASSET_BASE_URL,
+  baseUrl?: string,
 ): string {
   const value = path?.trim();
   if (!value) return PLACEHOLDER;
@@ -30,10 +28,10 @@ export function resolveLegacyAsset(
 
   if (!isSafeRelativePath(value)) return PLACEHOLDER;
   const cleanPath = value.replace(/^\.\/+/u, "").replace(/\/+/gu, "/");
-  if (env.LEGACY_UPLOAD_PATH) return `/api/legacy-assets/${area}/${encodeURIComponent(cleanPath).replace(/%2F/gu, "/")}`;
-  if (!baseUrl) return PLACEHOLDER;
-  const cleanBase = baseUrl.replace(/\/+$/, "");
-  return `${cleanBase}/images/${area}/${encodeURIComponent(cleanPath).replace(/%2F/gu, "/")}`;
+  // Legacy images are copied into public/images, so serve them from the same
+  // HTTPS origin without a file-system or remote-host proxy.
+  void baseUrl;
+  return `/images/${area}/${encodeURIComponent(cleanPath).replace(/%2F/gu, "/")}`;
 }
 
 export const legacyAssetPlaceholder = PLACEHOLDER;

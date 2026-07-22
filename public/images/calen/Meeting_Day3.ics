@@ -1,0 +1,271 @@
+BEGIN:VCALENDAR
+PRODID:-//Google Inc//Google Calendar 70.9054//EN
+VERSION:2.0
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+X-WR-CALNAME:Academic-meeting Day 3
+X-WR-TIMEZONE:Asia/Bangkok
+X-WR-CALDESC:Day 3 : Friday 11 July 2014
+BEGIN:VEVENT
+DTSTART:20140711T033000Z
+DTEND:20140711T050000Z
+DTSTAMP:20140704T113627Z
+UID:eaonc8eh0o99cgapiolrattpfo@google.com
+CREATED:20140704T112440Z
+DESCRIPTION:Correction of Astigmatism during Cataract Surgery\nChairman: Jo
+ han Huaturak\nCo-chairman: Pichit  Naripthaphan\n\nToric lens implantation 
+ tips- Fam Han bor (Singapore)\nLens approach : Use of toric IOLs for modera
+ te and high astigmatism- Johan Huaturak (Indonesia)\nHow to be successful i
+ n toric  and toric multifocal IOL- Pichit Naripthaphan (Thailand)\nHow to m
+ aximize the outcome of toric IOL-Tetsuro Oshika (Japan)
+LAST-MODIFIED:20140704T112528Z
+LOCATION:Lotus 12
+SEQUENCE:1
+STATUS:CONFIRMED
+SUMMARY:SYM 9-12: Cataract   
+TRANSP:OPAQUE
+END:VEVENT
+BEGIN:VEVENT
+DTSTART:20140711T013000Z
+DTEND:20140711T030000Z
+DTSTAMP:20140704T113627Z
+UID:c96oi3u5b8a3av7qjboh2ql75o@google.com
+CREATED:20140704T111219Z
+DESCRIPTION:Retina Free Paper  \nChairman: Sherman Valero\nCo-chairman: You
+ ng Shao Onn\nJudge: Mansing Ratanasukon\nFP6-01: Foveal sensitivity after h
+ alf-dosage Visudyne with photodynamic therapy in Central Serous Chorioretin
+ opathy (CSCR)- Prapapan Pitujaturont (Thailand)\nFP6-02:Membrane peeling an
+ d shorter waiting time increase succesfull rate of retinal detachment surge
+ ry- Gilbert w s Simanjuntak (Indonesia)\nFP6-03:Incidence of Post-intravitr
+ eal Anti-VEGF endopthalmitis at Thammasat University Hospital- Duangmontree
+  Rojdamrongratana (Thailand)\nFP6-05: Diffuse unilateral subacute neuroreti
+ nitis in central region of Thailand- Atiporn  Surawongsin (Thailand)\nFP6-0
+ 6: Deep range imaging optical coherence tomography (DRI-OCT): A Novel imagi
+ ng technique for polypoidal choroidal vasculopathy- Daniel shu wei Ting (Si
+ ngapore)
+LAST-MODIFIED:20140704T112608Z
+LOCATION:Lotus 12
+SEQUENCE:1
+STATUS:CONFIRMED
+SUMMARY:FP6
+TRANSP:OPAQUE
+END:VEVENT
+BEGIN:VEVENT
+DTSTART:20140711T013000Z
+DTEND:20140711T030000Z
+DTSTAMP:20140704T113627Z
+UID:4ekqq8g2qoh179no5e34h0bhfk@google.com
+CREATED:20140704T105932Z
+DESCRIPTION:Instruction Course II : Diagnosis and Management of Lacrimal Di
+ seases\nChairman: Sunisa Sintuwong\nCo-chairman: Thanyapat Benjhawaleemas\n
+ \nHow to diagnose the tearing patient and office procedures for tearing pat
+ ients- Kyung In Woo (Korea)\nPearls for endoscopic lacrimal surgery-Bobby S
+  Korn (US)\nThe Jet door flap- Nattawut Wanumkarng(Thailand)\n\nThe failed 
+ DCR:  What next – Don O Kikkawa (US)
+LAST-MODIFIED:20140704T112625Z
+LOCATION:Lotus 5-6
+SEQUENCE:1
+STATUS:CONFIRMED
+SUMMARY:SYM 8-L5: Oculoplastic
+TRANSP:OPAQUE
+END:VEVENT
+BEGIN:VEVENT
+DTSTART:20140711T013000Z
+DTEND:20140711T030000Z
+DTSTAMP:20140704T113627Z
+UID:v4kd98lk2s1kdutrtiq2bgvfqk@google.com
+CREATED:20140704T111145Z
+DESCRIPTION:Information Technology : The Digital Eye Hospital and Mobile Ey
+ e Care: Electronic Medical Records and Mobile Eye Apps Changing Delivery of
+  Eye Care World-wide\nChairman: Sirithorn Rutnin\nCo-chairman: -\n\nImpleme
+ ntation of EMR in Jakarta Eye Center: Paperless records\, steps for faster 
+ service- Johan Hutaurak (Indonesia)\nEMR implementations in eye hospitals i
+ n the USA: Successes & challenges- Robert Betz (USA)\nMobile Apps and autom
+ ation: Enhancements for fast and seamless patient care- Jean-Pierre Dumas (
+ Thailand)
+LAST-MODIFIED:20140704T112635Z
+LOCATION:Lotus 7
+SEQUENCE:1
+STATUS:CONFIRMED
+SUMMARY:SYM 8-L7: ASEAN Eye Hospital Association
+TRANSP:OPAQUE
+END:VEVENT
+BEGIN:VEVENT
+DTSTART:20140711T013000Z
+DTEND:20140711T030000Z
+DTSTAMP:20140704T113627Z
+UID:ak08nol8um69jrqr6mr3kvegs8@google.com
+CREATED:20140704T111249Z
+DESCRIPTION:Pediatric Ophthalmology Free Paper\nChairman: Supaporn Tengtris
+ orn\nCo-chairman: Parnchat Pukrushpan\nJudge: Pantipa Wongwai\nFP7-01: Marf
+ an syndrome management- Maretha Amrayni (Indonesia)\nFP7-02: Risk factors i
+ n developing retinopathy of prematurity in newborns in a private tertiary i
+ nstitution in the Philippines- Carlos Chua (Philippines)\nFP7-03: Using of 
+ ocular biometric values from donor’s eyes to create a new formula for horiz
+ ontal strabismic correction- Sumet Supalaseth (Thailand)
+LAST-MODIFIED:20140704T112656Z
+LOCATION:Lotus 12
+SEQUENCE:1
+STATUS:CONFIRMED
+SUMMARY:FP7
+TRANSP:OPAQUE
+END:VEVENT
+BEGIN:VEVENT
+DTSTART:20140711T030000Z
+DTEND:20140711T033000Z
+DTSTAMP:20140704T113628Z
+UID:aqn9m8h3kq5naen0kmi0cb0l28@google.com
+CREATED:20140704T111540Z
+DESCRIPTION:Coffee Break and E-Poster Presentation
+LAST-MODIFIED:20140704T112706Z
+LOCATION:Convention B
+SEQUENCE:1
+STATUS:CONFIRMED
+SUMMARY:Coffee Break and E-Poster Presentation
+TRANSP:OPAQUE
+END:VEVENT
+BEGIN:VEVENT
+DTSTART:20140711T033000Z
+DTEND:20140711T050000Z
+DTSTAMP:20140704T113628Z
+UID:6629aesghhmsacjugtu8uef580@google.com
+CREATED:20140704T111616Z
+DESCRIPTION:Spotlight on Pediatric Ophthalmology and Strabismus\nChairman: 
+  Penny Singha\nCo-chair : Rattiya Pornchaisuree\n\nStrabismus following ocu
+ lar surgeries - Parnchat Pukrushpan (Thailand)\nLeber congenital amaurosis 
+ - Laongsri Atchaneeyasakul (Thailand)\nSurgical challenging for CFEOM - Pra
+ patsorn Patikulsila (Thailand)\nAdult esotropia - Penny Singha (Thailand)
+LAST-MODIFIED:20140704T112731Z
+LOCATION:Lotus 1-2
+SEQUENCE:1
+STATUS:CONFIRMED
+SUMMARY:SYM 9-L1: Pediatric Ophthalmology
+TRANSP:OPAQUE
+END:VEVENT
+BEGIN:VEVENT
+DTSTART:20140711T033000Z
+DTEND:20140711T050000Z
+DTSTAMP:20140704T113628Z
+UID:ukip6150s99f58oafp127muo7g@google.com
+CREATED:20140704T112258Z
+DESCRIPTION:Glaucoma Surgery\nChairman: Wallop Iamsomboon\nCo-chairman: Was
+ u Supakontanasan\n\nGoniotomy - Mai Dang Tam (Vietnam)                     
+            \nTrabeculectomy with Ologen vs. MMC- Trinh Thi Bach Tuyet (Viet
+ nam)\nHow do I manage failing trab? - Ankana Metheetrirat (Thailand)\nModer
+ nization of glaucoma surgery & devices- Boonsong Wanichwecharungruang (Thai
+ land)\nAhmed valve - 5-year study- Bui Thi Van Anh (Vietnam)\nHow do I mana
+ ge failing tube?- Seng Kheong Fang (Malaysia)
+LAST-MODIFIED:20140704T112743Z
+LOCATION:Lotus 3-4
+SEQUENCE:1
+STATUS:CONFIRMED
+SUMMARY:SYM 9-L3: Glaucoma Instruction Course
+TRANSP:OPAQUE
+END:VEVENT
+BEGIN:VEVENT
+DTSTART:20140711T033000Z
+DTEND:20140711T050000Z
+DTSTAMP:20140704T113628Z
+UID:umcbg42n5j0vaj6jgm9rm41vss@google.com
+CREATED:20140704T112335Z
+DESCRIPTION:Instruction Course III : Orbital Disorders\nChairman: Nattawut 
+ Wanumkarng\nCo-chairman: Weerawan Chokthaweesak\nSurgical approaches to the
+  orbit- Bobby S Korn (US)\nCustomizing orbital reconstruction- Don O Kikkaw
+ a (US)\nThe diagnosis and management of cavernous hemangioma- Yoon Duck Kim
+  (Korea)\nExtraocular muscle dysfunction in orbital fractures- Kyung In Woo
+  (Korea)\nOrbital decompression- Yoon Duck Kim (Korea)
+LAST-MODIFIED:20140704T112820Z
+LOCATION:Lotus 5-6
+SEQUENCE:1
+STATUS:CONFIRMED
+SUMMARY:SYM 9-L5: Oculoplastic
+TRANSP:OPAQUE
+END:VEVENT
+BEGIN:VEVENT
+DTSTART:20140711T033000Z
+DTEND:20140711T050000Z
+DTSTAMP:20140704T113628Z
+UID:eag3hvh29i2hb2bvi2cac47en8@google.com
+CREATED:20140704T112432Z
+DESCRIPTION:Benchmarking and Innovations in Eye Hospitals : Quality Indicat
+ ors\, Strategic Management\, and New Perspectives In Improving Eye Care\nCh
+ airman: Sirithorn Rutnin\nCo-chairman: -\nDeveloping a benchmarking reporti
+ ng system for eye hospitals – Lessons learned from the USA experience- Robe
+ rt Betz (US)\nWhat is Benchmarking and how can it help improve the world of
+  eye care -Dirk de Korne (Singapore)\nExcellence in vision at the American 
+ Eye Centre - Benjamin Cabrera (Philippines )\n50 years of quality and innov
+ ation at Rutnin Eye Hospital - Sirithorn Rutnin (Thailand)
+LAST-MODIFIED:20140704T112843Z
+LOCATION:Lotus 7  
+SEQUENCE:1
+STATUS:CONFIRMED
+SUMMARY:SYM9-L7: ASEAN Eye Hospital Association
+TRANSP:OPAQUE
+END:VEVENT
+BEGIN:VEVENT
+DTSTART:20140711T050000Z
+DTEND:20140711T063000Z
+DTSTAMP:20140704T113628Z
+UID:kdg5sififig3onc8vdl89p4738@google.com
+CREATED:20140704T112929Z
+DESCRIPTION:Phaco Perls for Beginners  \nModerator: Pornchai Simaroj\nPanne
+ t Pangputhipong (Thailand)
+LAST-MODIFIED:20140704T112939Z
+LOCATION:Convention A
+SEQUENCE:1
+STATUS:CONFIRMED
+SUMMARY:LH3-PL:
+TRANSP:OPAQUE
+END:VEVENT
+BEGIN:VEVENT
+DTSTART:20140711T050000Z
+DTEND:20140711T063000Z
+DTSTAMP:20140704T113628Z
+UID:9luv7d81ch62r57bpcmn598t68@google.com
+CREATED:20140704T113202Z
+DESCRIPTION:Patient Centered Care: The Need of the Hour\nModerator:  Puwat 
+ Charukamnoetkanok\nRamachandra Pararajasegaram (Switzerland)
+LAST-MODIFIED:20140704T113202Z
+LOCATION:Lotus 1-2 
+SEQUENCE:0
+STATUS:CONFIRMED
+SUMMARY:LH3-L1:
+TRANSP:OPAQUE
+END:VEVENT
+BEGIN:VEVENT
+DTSTART:20140711T063000Z
+DTEND:20140711T080000Z
+DTSTAMP:20140704T113629Z
+UID:rnh3kd54e1nusdqk4fvpi229t0@google.com
+CREATED:20140704T113232Z
+DESCRIPTION:Eye Trauma from Anterior to Posterior \nChairman: Warapat Wongs
+ awad\nCo-chairman: Patama Bhurayanontachai  \nOrbital fracture repair : Pri
+ nciples and practice- Kanjana Leelapatranurak (Thailand)\nAll about corneal
+  repair : Principle and practice- Wiwan Sansanayudh (Thailand)\nPosterior s
+ egment trauma- Patama Bhurayanonthachai  (Thailand)
+LAST-MODIFIED:20140704T113232Z
+LOCATION:Lotus 7
+SEQUENCE:0
+STATUS:CONFIRMED
+SUMMARY:SYM 10-L7: Truama
+TRANSP:OPAQUE
+END:VEVENT
+BEGIN:VEVENT
+DTSTART:20140711T063000Z
+DTEND:20140711T080000Z
+DTSTAMP:20140704T113629Z
+UID:ep4evivk7bm4nkplg1m7vedk7k@google.com
+CREATED:20140704T113243Z
+DESCRIPTION:“Work Easy and Play Hard” with Information Technology (iPad and
+  iPhone) for General Ophthalmologists\nChairman: Nattawut Wanumkarng\nCo-ch
+ airman: Kanjana Leelapatranurak\nNattawut Wanumkarng (Thailand)\nKanjana Le
+ elapatranurak (Thailand)\nAungnapa Kongthaworn (Thailand)\nRath Itthipanich
+ pong (Thailand)
+LAST-MODIFIED:20140704T113322Z
+LOCATION:Lotus 12
+SEQUENCE:1
+STATUS:CONFIRMED
+SUMMARY:SYM 10-12:IT
+TRANSP:OPAQUE
+END:VEVENT
+END:VCALENDAR

@@ -1,0 +1,887 @@
+BEGIN:VCALENDAR
+PRODID:-//Google Inc//Google Calendar 70.9054//EN
+VERSION:2.0
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+X-WR-CALNAME:31th Scientific Meeting  The Royal College of Ophthalmologists
+  of Thailand
+X-WR-TIMEZONE:Asia/Bangkok
+X-WR-CALDESC:June 26-28\, 2013\n\nCentara Grand at Central World
+BEGIN:VEVENT
+DTSTART:20130628T063000Z
+DTEND:20130628T080000Z
+DTSTAMP:20130613T040828Z
+UID:c2b3ia3qpf9lidsv9r7j7o148k@google.com
+CREATED:20130613T021330Z
+DESCRIPTION:Low Vision Thailand\, “The 2013 Initiative”\nModerator: Warapat
+  Wongsawad\, MD\n1. Low Vision Service in University Hospital\, Siriraj Exp
+ erience: Suksri Chotikavanich\, MD\n2. Low Vision Service in Public Hospita
+ l\, How to Make Best Team Practice: Patcharapim Masaya-anon\, MD\n3. Low Vi
+ sion Association (Thailand)\, The New Hope for Low Vision: Thawatchai Lalit
+ suradej\n4. The “MUST KNOW”\, Update on Low Vision Regulations\, the ICF De
+ finition\, and Thailand Data: Kwanjai Wongkittiruk\, MD\n5. Now and the Fut
+ ure\, Update on National Policies and Future Trend on Low Vision: Daranee S
+ uwapan\, MD
+LAST-MODIFIED:20130613T021330Z
+LOCATION:Lotus 12
+SEQUENCE:0
+STATUS:CONFIRMED
+SUMMARY:Low Vision Symposium
+TRANSP:OPAQUE
+END:VEVENT
+BEGIN:VEVENT
+DTSTART:20130628T063000Z
+DTEND:20130628T080000Z
+DTSTAMP:20130613T040828Z
+UID:drgtk8s1qh4n0ndjcki7s2nlng@google.com
+CREATED:20130601T142344Z
+DESCRIPTION:\nChairmen: Laongsri Atchaneeyasakul\, MD\nSpeakers: Seubsai Kh
+ ongsangdao\, MD\, Krisnapong Manotham\, MD
+LAST-MODIFIED:20130613T021250Z
+LOCATION:Main Hall
+SEQUENCE:1
+STATUS:CONFIRMED
+SUMMARY:Stem Cells: Wind of Change in Ophthalmology
+TRANSP:OPAQUE
+END:VEVENT
+BEGIN:VEVENT
+DTSTART:20130628T050000Z
+DTEND:20130628T063000Z
+DTSTAMP:20130613T040828Z
+UID:6l0ai0cff7sj3epi6lqqur6trc@google.com
+CREATED:20130601T142553Z
+DESCRIPTION:\n“Incorporating Advanced Technology IOLs into Your Practice to
+  Treat Presbyopia or Pre-existing Corneal Astigmatism During Cataract Surge
+ ry”\n“Worthwhile Worldwide Ophthalmology Application of Moxifloxacin”\nMode
+ rators: Prin Rojanapongpun\, MD\, Pannet Pangputhipong\, MD\n- Incorporatin
+ g Advanced Technology IOLs into Your Practice to Treat Presbyopia or Pre-ex
+ isting Corneal Astigmatism During Cataract Surgery: Prin Rojanapongpun\, MD
+ \n- Clinical Application of Moxifloxacin/Dexamethasone Combination in Refra
+ ctive Surgery: Sabong Srivannaboon\, MD\n- Clinical Application of Moxiflox
+ acin in Pre and Post Cataract Surgery: La-Ongsri Atchaneeyasakul\, MD
+LAST-MODIFIED:20130613T021031Z
+LOCATION:Lotus 5-7
+SEQUENCE:1
+STATUS:CONFIRMED
+SUMMARY:Alcon Luncheon Symposium
+TRANSP:OPAQUE
+END:VEVENT
+BEGIN:VEVENT
+DTSTART:20130628T050000Z
+DTEND:20130628T063000Z
+DTSTAMP:20130613T040828Z
+UID:5p6tk6fne3grsbojh4tk45mu08@google.com
+CREATED:20130601T142519Z
+DESCRIPTION:\n\n\n"Searching & Managing References: What do the experts use
+ ?" \nChairman: Somkiat Assawaphureekorn\, MD\nSpeakers: TORG committees
+LAST-MODIFIED:20130613T021010Z
+LOCATION:Main Hall
+SEQUENCE:1
+STATUS:CONFIRMED
+SUMMARY:Lunch Talk by TORG
+TRANSP:OPAQUE
+END:VEVENT
+BEGIN:VEVENT
+DTSTART:20130628T033000Z
+DTEND:20130628T050000Z
+DTSTAMP:20130613T040828Z
+UID:uff8s11rdmm72h419m9gae86lk@google.com
+CREATED:20130601T142650Z
+DESCRIPTION:\n\n\nChairmen: Jutalai Tanterdtham\, MD\, Ngamjit Kasetsuwan\,
+  MD\nCRST: Application of UV Cross-linking in Corneal Diseases : \nNalinee 
+ Pansatiankul\, MD\nOPRC: Nattha Sakolsattayathorn\, MD\nRetina: Update in R
+ etina From APVRS Meeting: \nWongsiri Taweebanjongsin\, MD\nPediatric Ophtha
+ lmology & Strabismus: New Criteria for Automated Preschool Vision Screening
+ : Apatsa Leksakul\, MD\nCataract & Refractive Surgery: \nGlaucoma: Paradigm
+  shift in the Intraocular Drug Delivery: the effect on glaucoma management:
+  Weerawat Kiddee\, MD\nNeuro-Ophthalmology: Dangerous diplopia: Linda Hansa
+ pinyo\, MD
+LAST-MODIFIED:20130613T020908Z
+LOCATION:Main Hall
+SEQUENCE:1
+STATUS:CONFIRMED
+SUMMARY:Highlight of International Meeting
+TRANSP:OPAQUE
+END:VEVENT
+BEGIN:VEVENT
+DTSTART:20130628T013000Z
+DTEND:20130628T030000Z
+DTSTAMP:20130613T040828Z
+UID:qihvtnug3ogvnclfttq8qmodsk@google.com
+CREATED:20130601T142253Z
+DESCRIPTION:Speakers: Chaiwat Teekhasaenee\, MD\, \nWasu Suppakornthanasarn
+ \, MD\, Yanin Suwan\, MD\, \nPradtana Hirunpatravong\, MD
+LAST-MODIFIED:20130613T020847Z
+LOCATION:Main Hall
+SEQUENCE:0
+STATUS:CONFIRMED
+SUMMARY:Angle Closure : Current Trend and Management
+TRANSP:OPAQUE
+END:VEVENT
+BEGIN:VEVENT
+DTSTART:20130627T063000Z
+DTEND:20130627T080000Z
+DTSTAMP:20130613T040828Z
+UID:5orgp10pkarisvmeq098up70mg@google.com
+CREATED:20130601T141336Z
+DESCRIPTION:\nModerator: Ekktet Chansue\, MD\nSpeakers: Pichit Naripthaphan
+ \, MD\, Sabong Srivannaboon\, MD\, Sukanda Swasdibutra\, MD\, Somchai Trako
+ olshoke-Satian\, MD
+LAST-MODIFIED:20130613T020805Z
+LOCATION:Main Hall
+SEQUENCE:0
+STATUS:CONFIRMED
+SUMMARY:Refractive Surgery Symposium
+TRANSP:OPAQUE
+END:VEVENT
+BEGIN:VEVENT
+DTSTART:20130627T033000Z
+DTEND:20130627T053000Z
+DTSTAMP:20130613T040828Z
+UID:tb1ff7tifjejfi0dsg85b949rg@google.com
+CREATED:20130613T020532Z
+DESCRIPTION:Chair: Pannet Pangputhipong\, MD\n- Medical Academic Hub: Tares
+  Krassanairawiwong\, MD\n- Service Plan: Kwanjai Wongkittirux\, MD\n- P4P: 
+ Anukul Thaitanundr\, MD\n- Collaborative Project to Increase Rural Doctor(C
+ PIRD) Policy: \nAchara Nitiapinyasakul\, MD
+LAST-MODIFIED:20130613T020559Z
+LOCATION:Lotus 1-2
+SEQUENCE:1
+STATUS:CONFIRMED
+SUMMARY:Health System Reform in Thailand 2013: Challenges and Opportunities
+  of Ophthalmologists
+TRANSP:OPAQUE
+END:VEVENT
+BEGIN:VEVENT
+DTSTART:20130627T013000Z
+DTEND:20130627T030000Z
+DTSTAMP:20130613T040828Z
+UID:7j95punj563ba8dvo5al92l0b0@google.com
+CREATED:20130601T140031Z
+DESCRIPTION:Chair: Sorot Wutthiphan\, MD\n- Facial Rejuvenation Laser: Wora
+ phong Manuskiatti\, MD\n- Laser Treatment for Hyperpigmentation and Vascula
+ r Lesions: Woraphong Manuskiatti\, MD\n- Can Skin Laser Damage the Eye?: Du
+ angnate Rojanaporn\, MD
+LAST-MODIFIED:20130613T020431Z
+LOCATION:Main Hall
+SEQUENCE:1
+STATUS:CONFIRMED
+SUMMARY:“Facial Laser Treatment”
+TRANSP:OPAQUE
+END:VEVENT
+BEGIN:VEVENT
+DTSTART:20130626T063000Z
+DTEND:20130626T080000Z
+DTSTAMP:20130613T040828Z
+UID:7t9g38oql6l9p4oqnhlg96d23c@google.com
+CREATED:20130601T135027Z
+DESCRIPTION:Cataract Instruction Course\nCataract Surgery in Associated Dis
+ ease\nModerator: Amporn Jongserijit\, MD \nSpeakers: Vilavan Puangsricharer
+ n\, MD\, Chairat Saovaprut\, MD\, \nAtchara Ampornpruet\, MD\, Paiboon Bawo
+ rnwattanadilok\, MD\, Pongsak Pachimkul\, MD\,
+LAST-MODIFIED:20130613T020219Z
+LOCATION:Main Hall
+SEQUENCE:0
+STATUS:CONFIRMED
+SUMMARY:Cataract Instruction Course
+TRANSP:OPAQUE
+END:VEVENT
+BEGIN:VEVENT
+DTSTART:20130626T043000Z
+DTEND:20130626T050000Z
+DTSTAMP:20130613T040828Z
+UID:eaohs3el031d2u4rei3kbjm4n4@google.com
+CREATED:20130613T020121Z
+DESCRIPTION:Paisan Ruamviboonsuk\, MD\, Jutalai Tanterdtham\, MD\, \nPrut H
+ anutsaha\, MD\, Wasee Tulvatana\, MD\, \nThitiporn Ratanapojnard\, MD\n- มอ
+ บรางวัลผู้ชนะเลิศการประกวดภาพถ่าย Ophthalmic Photo Contest
+LAST-MODIFIED:20130613T020121Z
+LOCATION:Main Hall
+SEQUENCE:0
+STATUS:CONFIRMED
+SUMMARY:อนาคต และทิศทาง ของราชวิทยาลัยจักษุแพทย์แห่งประเทศไทย
+TRANSP:OPAQUE
+END:VEVENT
+BEGIN:VEVENT
+DTSTART:20130626T033000Z
+DTEND:20130626T043000Z
+DTSTAMP:20130613T040828Z
+UID:kmtuvjk97kr6tnbihe5chgs5vk@google.com
+CREATED:20130601T133815Z
+DESCRIPTION:- Opening Ceremony by President of The Royal College of \nOphth
+ almologists of Thailand: Paisan Ruamviboonsuk\, MD\n- ปาฐกถาเกียรติยศ แด่พั
+ นโทนายแพทย์หลวงประจักษ์เวชสิทธิ์ นายกสมาคมจักษุแพทย์แห่งประเทศไทยคนที่หนึ่ง
+  โดย ศ.นพ. ประจักษ์เวช ประจักษ์เวช\nองค์ปาฐก: รศ.นพ.ชัยวัฒน์ ฑีฆเสนีย์ ภาคว
+ ิชาจักษุวิทยา คณะแพทยศาสตร์ รพ.รามาธิบดี\n- Exfoliation Syndrome: clinical 
+ manifestations and significance: Chiawat Teekasaenee\, MD
+LAST-MODIFIED:20130613T020034Z
+LOCATION:Main Hall
+SEQUENCE:0
+STATUS:CONFIRMED
+SUMMARY:Opening Ceremony
+TRANSP:OPAQUE
+END:VEVENT
+BEGIN:VEVENT
+DTSTART:20130628T050000Z
+DTEND:20130628T063000Z
+DTSTAMP:20130613T040828Z
+UID:1nk09hq9asuf1v1rrakr536u4c@google.com
+CREATED:20130601T142621Z
+DESCRIPTION:\n\n“Glaucoma Clinical Challenges”\nModerator: Boonsong Wanichw
+ echarungruang\, MD\nSpeaker: Ngamjit Kasetsuwan\, MD
+LAST-MODIFIED:20130601T142621Z
+LOCATION:Lotus 12
+SEQUENCE:0
+STATUS:CONFIRMED
+SUMMARY:Thai-otsuka Luncheon Symposium
+TRANSP:OPAQUE
+END:VEVENT
+BEGIN:VEVENT
+DTSTART:20130628T033000Z
+DTEND:20130628T050000Z
+DTSTAMP:20130613T040828Z
+UID:gkrtuvkeeajacg16bclhe2ipdo@google.com
+CREATED:20130601T142456Z
+DESCRIPTION:\n\nThyroid Eye Disease  "From Past to Present" : Changing to B
+ etter Management\nChairman: Kanograt Pornpanich\, MD\nSpeakers: Thanyapat B
+ enjhawaleemas\, MD\, \nKanjana Leelapatranurak\, MD\, Panitee Luemsamran\, 
+ MD
+LAST-MODIFIED:20130601T142456Z
+LOCATION:Lotus 3-4
+SEQUENCE:0
+STATUS:CONFIRMED
+SUMMARY:OPRC Symposium
+TRANSP:OPAQUE
+END:VEVENT
+BEGIN:VEVENT
+DTSTART:20130628T033000Z
+DTEND:20130628T050000Z
+DTSTAMP:20130613T040828Z
+UID:n2q9lji4toj88s1s82nq50ej88@google.com
+CREATED:20130601T142437Z
+DESCRIPTION:\n\nChairman: Pornchai Simaroj\, MD \nSpeakers: Taweekit Nimvor
+ apun\, MD\, Suwat Kusakul\, MD\, \nSomchai Wongwatesawat\, MD
+LAST-MODIFIED:20130601T142437Z
+LOCATION:Lotus 1-2
+SEQUENCE:0
+STATUS:CONFIRMED
+SUMMARY:Sharing Experience in Cataract Surgery
+TRANSP:OPAQUE
+END:VEVENT
+BEGIN:VEVENT
+DTSTART:20130628T033000Z
+DTEND:20130628T050000Z
+DTSTAMP:20130613T040828Z
+UID:1qce6s9addet5sjkloqop4mvt8@google.com
+CREATED:20130601T142412Z
+DESCRIPTION:\n\nCRST Photo Quiz  \nSpeaker: CRST Committee
+LAST-MODIFIED:20130601T142412Z
+LOCATION:Lotus 5-7
+SEQUENCE:0
+STATUS:CONFIRMED
+SUMMARY:Cornea Symposium
+TRANSP:OPAQUE
+END:VEVENT
+BEGIN:VEVENT
+DTSTART:20130628T030000Z
+DTEND:20130628T033000Z
+DTSTAMP:20130613T040828Z
+UID:877f76et6mq2nvt5ufauscgc6k@google.com
+CREATED:20130601T142316Z
+DESCRIPTION:\n\n
+LAST-MODIFIED:20130601T142316Z
+LOCATION:Exhibition Hall
+SEQUENCE:0
+STATUS:CONFIRMED
+SUMMARY:Break
+TRANSP:OPAQUE
+END:VEVENT
+BEGIN:VEVENT
+DTSTART:20130628T004500Z
+DTEND:20130628T020000Z
+DTSTAMP:20130613T040828Z
+UID:odqo36vuk9hn6oq6vvpkiikai0@google.com
+CREATED:20130601T142220Z
+DESCRIPTION:\n
+LAST-MODIFIED:20130601T142220Z
+LOCATION:Exhibition Hall
+SEQUENCE:0
+STATUS:CONFIRMED
+SUMMARY:Coffee Break
+TRANSP:OPAQUE
+END:VEVENT
+BEGIN:VEVENT
+DTSTART:20130627T080000Z
+DTEND:20130627T093000Z
+DTSTAMP:20130613T040828Z
+UID:agi25s81t00j823g8d1q68iano@google.com
+CREATED:20130601T142016Z
+DESCRIPTION:\n\n
+LAST-MODIFIED:20130601T142016Z
+LOCATION:Exhibition Hall
+SEQUENCE:0
+STATUS:CONFIRMED
+SUMMARY:Afternoon Break
+TRANSP:OPAQUE
+END:VEVENT
+BEGIN:VEVENT
+DTSTART:20130627T081500Z
+DTEND:20130627T093000Z
+DTSTAMP:20130613T040828Z
+UID:em7mprno748kv07un9auo38b00@google.com
+CREATED:20130601T141947Z
+DESCRIPTION:\n\n
+LAST-MODIFIED:20130601T141947Z
+LOCATION:Lotus 12
+SEQUENCE:0
+STATUS:CONFIRMED
+SUMMARY:พอสว Meeting
+TRANSP:OPAQUE
+END:VEVENT
+BEGIN:VEVENT
+DTSTART:20130627T081500Z
+DTEND:20130627T093500Z
+DTSTAMP:20130613T040828Z
+UID:2tmp23drk6ps4q5ubne1lvd5ak@google.com
+CREATED:20130601T141849Z
+DESCRIPTION:\n\nChairmen: Nattawut Wanumkarng\, MD\,  \nManchima Makornwatt
+ ana\, MD\nSpeakers: \nPaisan Ruamviboonsook\, MD (Retina)\nPannet Pangputhi
+ pong\, MD (Cataract)\nPrin Rojanapongpan\, MD (Glaucoma)\nEkktet Chansue\, 
+ MD (Refractive Surgery) \nManchima Makornwattana (Glaucoma)\nNattawut Wanum
+ karng\, MD (Ophthalmic Plastic and Reconstructive Surgery) 
+LAST-MODIFIED:20130601T141903Z
+LOCATION:Lotus 5-7
+SEQUENCE:0
+STATUS:CONFIRMED
+SUMMARY:How to Prepare Myself for being the International Speaker before Th
+ e ASEAN Economic Community Era in 2015 
+TRANSP:OPAQUE
+END:VEVENT
+BEGIN:VEVENT
+DTSTART:20130627T081500Z
+DTEND:20130627T093000Z
+DTSTAMP:20130613T040828Z
+UID:rb8lm1apt26ss5dp63th5vf4bk@google.com
+CREATED:20130601T141730Z
+DESCRIPTION:Prut Hanutsaha\, MD 
+LAST-MODIFIED:20130601T141730Z
+LOCATION:Main Hall
+SEQUENCE:0
+STATUS:CONFIRMED
+SUMMARY:Practical Optic Made Easy for Everyone
+TRANSP:OPAQUE
+END:VEVENT
+BEGIN:VEVENT
+DTSTART:20130627T063000Z
+DTEND:20130627T080000Z
+DTSTAMP:20130613T040828Z
+UID:cmcvmjlgjpf4ed741th27pptpk@google.com
+CREATED:20130601T141615Z
+DESCRIPTION:\nBasic Principles of Ophthalmic Plastic Surgery \nSpeakers : V
+ aratthaporn Chanlalit\, MD\, \nPattama Wongwatthanadej\, MD\, Sakrin Ausaya
+ khun\, MD
+LAST-MODIFIED:20130601T141615Z
+LOCATION:Lotus 12
+SEQUENCE:0
+STATUS:CONFIRMED
+SUMMARY:OPRC Instruction Course
+TRANSP:OPAQUE
+END:VEVENT
+BEGIN:VEVENT
+DTSTART:20130627T063000Z
+DTEND:20130627T080000Z
+DTSTAMP:20130613T040828Z
+UID:l53copa7uv5fl0tl6aqgkqk20g@google.com
+CREATED:20130601T141449Z
+DESCRIPTION:\n\nSpeakers : Kittisak Kulvichit\, MD\, Wasee Tulvatana\, MD
+LAST-MODIFIED:20130601T141449Z
+LOCATION:Lotus 3-4
+SEQUENCE:0
+STATUS:CONFIRMED
+SUMMARY:Workshop: Clinical trial registration
+TRANSP:OPAQUE
+END:VEVENT
+BEGIN:VEVENT
+DTSTART:20130627T063000Z
+DTEND:20130627T080000Z
+DTSTAMP:20130613T040828Z
+UID:p93pemrhvheg7a6jlnr13ctej4@google.com
+CREATED:20130601T141415Z
+DESCRIPTION:\n\n"When Retina is Threatened"\nModerators: Adisai Varadisai\,
+  MD\, Navapol Kanchanaranya\, MD\nChloroquine Maculopathy: Ngamkae Ruangvar
+ avate\, MD\nRadiation Retinopathy: Duangnate Rojanaporn\, MD\nPregnancy Ind
+ uced Chorioretinopathy: Nawat Watanacha\, MD
+LAST-MODIFIED:20130601T141415Z
+LOCATION:Lotus 5-7
+SEQUENCE:0
+STATUS:CONFIRMED
+SUMMARY:Retina Symposium
+TRANSP:OPAQUE
+END:VEVENT
+BEGIN:VEVENT
+DTSTART:20130627T050000Z
+DTEND:20130627T063000Z
+DTSTAMP:20130613T040828Z
+UID:8kq6p2uj0mp6oh7vp25avmnon0@google.com
+CREATED:20130601T141209Z
+DESCRIPTION:\n\nLaser Refractive Cataract Surgery with LenSx® Delivering th
+ e Promise\n- Clinical benefits over conventional phaco- Results:\nMichael L
+ awless\, MD\n- How LenSx® has exceeds my clinical expectations:\nPannet Pan
+ gputhipong\, MD\n- My learning about LenSx: Sombat Srisuwanporn\, MD
+LAST-MODIFIED:20130601T141209Z
+LOCATION:Lotus 12
+SEQUENCE:0
+STATUS:CONFIRMED
+SUMMARY:Alcon Luncheon Symposium
+TRANSP:OPAQUE
+END:VEVENT
+BEGIN:VEVENT
+DTSTART:20130627T050000Z
+DTEND:20130627T063000Z
+DTSTAMP:20130613T040828Z
+UID:c5qcae3baulpktpbnee9439aik@google.com
+CREATED:20130601T141139Z
+DESCRIPTION:\n\n“The latest advance of the TECNIS family IOLs” (TECNIS™ Tor
+ ic IOLs)\nModerator and Introduce and Open the TECNIS™ Toric IOLs Launch: A
+ disak Trinavarat\, MD\n- Pearls in Astigmatism:\n- Management with Toric IO
+ Ls:\nSpeaker: Kalayanee Rojanaporn\, MD\n- The Latest advance of the TECNIS
+  family IOLs:\n- What are advancements in the TECNIS™ Toric IOLs?\n- How to
+  implant the TECNIS™ Toric IOLs ? \nSpeaker: FAM Han Bor\, MD\n- How to be 
+ a 3A's surgeon for toric IOL :\n- Accurate Axis Alignment: \nSpeaker: Chair
+ at Saovaprut\, MD
+LAST-MODIFIED:20130601T141139Z
+LOCATION:Lotus 1-2
+SEQUENCE:0
+STATUS:CONFIRMED
+SUMMARY:AMO Luncheon Symposium 
+TRANSP:OPAQUE
+END:VEVENT
+BEGIN:VEVENT
+DTSTART:20130627T050000Z
+DTEND:20130627T063000Z
+DTSTAMP:20130613T040828Z
+UID:k3gfu0q36vs5ivnhtsvjsvgs1g@google.com
+CREATED:20130601T140922Z
+DESCRIPTION:\n\n“Optimising Stepwise Therapy in Glaucoma”\nModerator: Visan
+ ee Tantisevi\, MD\n- When PG is not the one and only?: Sumalee Boonyaleepha
+ n\, MD\n- Optimising Stepwise Therapy in Glaucoma: \nKessara Pathanapitoon\
+ , MD
+LAST-MODIFIED:20130601T140922Z
+LOCATION:Lotus 3-4
+SEQUENCE:0
+STATUS:CONFIRMED
+SUMMARY:Alcon Luncheon Symposium (100)
+TRANSP:OPAQUE
+END:VEVENT
+BEGIN:VEVENT
+DTSTART:20130627T050000Z
+DTEND:20130627T063000Z
+DTSTAMP:20130613T040828Z
+UID:7ibkotee6p0g8dkv4au1fq53l0@google.com
+CREATED:20130601T140852Z
+DESCRIPTION:\n\n“Hot topics in Cataract Surgery : Femtosecond and IOL Contr
+ overies”
+LAST-MODIFIED:20130601T140852Z
+LOCATION:Lotus 5-7
+SEQUENCE:0
+STATUS:CONFIRMED
+SUMMARY:Bausch&Lomb Luncheon Symposium
+TRANSP:OPAQUE
+END:VEVENT
+BEGIN:VEVENT
+DTSTART:20130627T050000Z
+DTEND:20130627T063000Z
+DTSTAMP:20130613T040828Z
+UID:1t2n3cpuqafcm1muqvfc70lm0o@google.com
+CREATED:20130601T140807Z
+DESCRIPTION:\n\n“Tracking Back: Ocular Surface Problems and Surgical Outcom
+ es”\nModerator: Prin Rojanapongpun\, MD\nSpeaker: Pinnita Tanthuvanit\, MD 
+ \nAlternative Surgical Techniques in Glaucoma\nBaseer U.Khan\, MD
+LAST-MODIFIED:20130601T140807Z
+LOCATION:Main Hall
+SEQUENCE:0
+STATUS:CONFIRMED
+SUMMARY:TRB Luncheon Symposium
+TRANSP:OPAQUE
+END:VEVENT
+BEGIN:VEVENT
+DTSTART:20130627T033000Z
+DTEND:20130627T050000Z
+DTSTAMP:20130613T040828Z
+UID:ltkh80s9usv2b3ss00v8ce7f4c@google.com
+CREATED:20130601T140713Z
+DESCRIPTION:\n\n“Key to PALS Success”\nChairmen: Thawatchai Pansatiankul\, 
+ MD\, \nBharkbhum khambhiphant\, MD \n- Introduction to PALS: Atiporn Thuang
+ tong\, MD \n- Patient and Frame Selection for PALS: \nBharkbhum khambhiphan
+ t\, MD \n- How to Select PALS: Dhirasak Pipatnoraseth\, MD \n- How to Adjus
+ t Parameters for PALS: Dhirasak Pipatnoraseth\, MD
+LAST-MODIFIED:20130601T140713Z
+LOCATION:Lotus 12
+SEQUENCE:0
+STATUS:CONFIRMED
+SUMMARY:RSTO Symposium
+TRANSP:OPAQUE
+END:VEVENT
+BEGIN:VEVENT
+DTSTART:20130627T033000Z
+DTEND:20130627T051000Z
+DTSTAMP:20130613T040828Z
+UID:3n7a929l75q3h1qq817vhmri4s@google.com
+CREATED:20130601T140638Z
+DESCRIPTION:\n\nChairman: Prut Hanutsaha\, MD \nCo-chairman: Raveewan Choon
+ tanom\, MD\n1. Congenital Aniridia: A 10-year retrospective study at Srinag
+ arind hospital \nNarong Samipak*\, MD\, Niphon Sayawat\, MD\n2. Incidence o
+ f Glaucoma Conversion in Patients with Large Cup to Disc Ratio\nSugamon Koo
+ hasawad*\, MD\, Naris Kitnarong\, MD\, MBA\n3. Long-term Success of Corneos
+ cleral Patch Graft for Glaucoma \nDrainage Devices \nNaris Kitnarong\, MD\,
+  MBA\, Supamas Rojananin*\, MD\n4. Prevalence of Ocular Surface Disease in 
+ Patients with Glaucoma Using Topical Intraocular Pressure-Lowering Medicati
+ ons at Srinagarind Hospital \nPawasoot Supasai\, MD\, Peerapat Pakdee*\, MD
+ \, Pakamat Srihachai\, MD\, Somkamol Rattanawongpaibul\, MD\n5. Clinical Fe
+ atures\, Risk Factors and Treatment Outcomes of Microsporidia Keratitis\nOn
+ siri Thanathanee\, MD\, Raweewan Athikulwongse*\, MD\, Orapin Anutarapongpa
+ n\, MD\, Olan Suwan-apichon\, MD\n6. LDV Femtosecond Laser-assisted Corneal
+  Transplantation\nUsanee Reinprayoon\, MD\, Mathu Busayarat*\, MD\, Lalida 
+ Pariyakanok\, MD\, Vilavun Puangsricharern\, MD\, Ngamjit Kasetsuwan\, MD\n
+ 7. Comparison of thin flap LASIK using femtosecond laser VS microkeratome\n
+ Vannarut Satitpitakul*\, MD\, Ngamjit Kasetsuwan\, MD\, Vilavun Puangsricha
+ rern\, MD\, Usanee Reinprayoon\, MD\, Lalida Pariyakanok\, MD\n8. The Visua
+ l and Refractive Outcomes after Femtosecond Laser-assisted Intrastromal Cor
+ neal Ring Segments Implantation in Keratoconus and Post-penetrating Keratop
+ lasty Astigmatism\nVilavun Puangsricharern\, MD\, Ngamjit Kasetsuwan\, MD\,
+  Lalida Pariyakanok\, MD\, Usanee Reinprayoon\, MD\, Raina Jindasak*\, MD\n
+ 9. Choroidal Thickness in Normal Eye in Thai Population\nWipada Laovirojjan
+ akul*\, MD\, Chavakij Bhoomibunchoo\, MD\, Yosanan Yospaiboon\, MD\, Janeji
+ t Choovuthayakorn\, MD\, Direk Patikulsila\, MD\, Nimitr Ittipunkul\, MD\n1
+ 0. Intraocular Lens Position Change after Nd-YAG Capsulotomy \nVilavun Puan
+ gsricharern\, MD\, Ngamjit Kasetsuwan\, MD\, Lalida Pariyakanok\, MD\, Usan
+ ee Reinprayoon\, MD\, Raina Jindasak*\, MD\n11. Bilateral Negative Dysphoto
+ psia : A Case Report\nOnsiri Thanathanee\, MD\, Prakairat Thongphiew*\, MD\
+ , Olan Suwan-apichon\, MD\nQuestions & Answers
+LAST-MODIFIED:20130601T140638Z
+LOCATION:Lotus 3-4
+SEQUENCE:0
+STATUS:CONFIRMED
+SUMMARY:Free Paper Session 
+TRANSP:OPAQUE
+END:VEVENT
+BEGIN:VEVENT
+DTSTART:20130627T033000Z
+DTEND:20130627T050000Z
+DTSTAMP:20130613T040828Z
+UID:2idju3li29tvhou6pu144s21is@google.com
+CREATED:20130601T140537Z
+DESCRIPTION:“To identify the findings by looking into your eyes”\nSpeakers:
+  Linda Hansapinyo\, MD\, Suthida Panpitpat\, MD\, Kankanath Ngamvichairath\
+ , MD\, Somboon Panyakorn\, MD\,
+LAST-MODIFIED:20130601T140537Z
+LOCATION:Lotus 5-7
+SEQUENCE:0
+STATUS:CONFIRMED
+SUMMARY:Neuro- Ophthalmology Symposium
+TRANSP:OPAQUE
+END:VEVENT
+BEGIN:VEVENT
+DTSTART:20130627T033000Z
+DTEND:20130627T050000Z
+DTSTAMP:20130613T040828Z
+UID:lqgchjv3b6ocu0m8j83sqsh854@google.com
+CREATED:20130601T140444Z
+DESCRIPTION:Glaucoma Continuum of Care \nChairmen: Wallop Iemsomboon\, MD\,
+  Visanee Tantisevi\, MD\nGlaucoma Diagnosis & Screening: \n- Update & Guide
+ line: Prin Rojanapongpun\, MD                           \n- Thailand Nation
+ al policy: Chaiwat Wongyaowarak\, MD\nGlaucoma Management and F/U:  \n- Cur
+ rent Recommendation: Kessara Pathanapitoon\, MD\n- Practice in the Communit
+ y: Wichean Roongthitithum\, MD\n- In Private Practice: Santa Methasiri\, MD
+ \nDealing with Complications:                   \n- In the City: Manchima M
+ akornwattana\, MD \n- In Loei Province: Pennapar Jampathong\, MD\nReferral 
+ Pattern: \n- In Southern Thailand: Thawat Tantisarasart\, MD\n- Should it b
+ e formulated?: Ngamkae Ruangvaravate\, MD\nConclusion: Seamless Continuum o
+ f Care:\nBoonsong Wanichwecharungruang\, MD
+LAST-MODIFIED:20130601T140444Z
+LOCATION:Main Hall
+SEQUENCE:0
+STATUS:CONFIRMED
+SUMMARY:Glaucoma Symposium
+TRANSP:OPAQUE
+END:VEVENT
+BEGIN:VEVENT
+DTSTART:20130627T030000Z
+DTEND:20130627T033000Z
+DTSTAMP:20130613T040828Z
+UID:hgun0msmgo0m57n3puiibn0jno@google.com
+CREATED:20130601T140152Z
+DESCRIPTION:\n\n
+LAST-MODIFIED:20130601T140152Z
+LOCATION:Exhibition Hall
+SEQUENCE:0
+STATUS:CONFIRMED
+SUMMARY:Break
+TRANSP:OPAQUE
+END:VEVENT
+BEGIN:VEVENT
+DTSTART:20130627T004500Z
+DTEND:20130627T020000Z
+DTSTAMP:20130613T040828Z
+UID:487kraf2m9ojqgitdp1k950q1o@google.com
+ATTENDEE;CUTYPE=INDIVIDUAL;ROLE=REQ-PARTICIPANT;PARTSTAT=ACCEPTED;CN=31th S
+ cientific Meeting  The Royal College of Ophthalmologists of Thailand;X-NUM-
+ GUESTS=0:mailto:lqpumohbmb9j39uscmbcnj6c18@group.calendar.google.com
+CREATED:20130601T135913Z
+DESCRIPTION:
+LAST-MODIFIED:20130601T135921Z
+LOCATION:Exhibition Hall
+SEQUENCE:0
+STATUS:CONFIRMED
+SUMMARY:Coffee Break
+TRANSP:OPAQUE
+END:VEVENT
+BEGIN:VEVENT
+DTSTART:20130626T080000Z
+DTEND:20130626T093000Z
+DTSTAMP:20130613T040828Z
+UID:c9ob11v4gqlgs0j12gjgv25tqo@google.com
+CREATED:20130601T135616Z
+DESCRIPTION:
+LAST-MODIFIED:20130601T135634Z
+LOCATION:Exhibition Hall
+SEQUENCE:0
+STATUS:CONFIRMED
+SUMMARY:Coffee Break
+TRANSP:OPAQUE
+END:VEVENT
+BEGIN:VEVENT
+DTSTART:20130626T081500Z
+DTEND:20130626T093000Z
+DTSTAMP:20130613T040828Z
+UID:4i0lujce83tr01ltr0nl7q538c@google.com
+CREATED:20130601T135531Z
+DESCRIPTION:\n\n“To be The Expert in 10 Minutes”\nSpeakers (IT committees):
+  Chavakij Bhoomibunchoo\, MD\, \nKanjana Leelapatranurak\, MD\, Nattawut Wa
+ numkarng\, MD\, Mongkol Tadarati\, MD\, Panwad Uthiyo\, MD\, Rath Itthipani
+ chpong\, MD\, Santi Ueanoraset\, MD\, Sritatath Vongkulsiri MD\, Thanapat R
+ attanapakorn\, MD\, Thanapong Somkijrungroj\, MD\, Tienchai Methanoppakhun\
+ , MD\, Warapat Wongsawad\, MD\, Yonrawee Piyacomn\, MD
+LAST-MODIFIED:20130601T135531Z
+LOCATION:Lotus 5-7
+SEQUENCE:0
+STATUS:CONFIRMED
+SUMMARY:Skill Transfer Course: Work and Play with Latest Information Techno
+ logy for Ophthalmologists 
+TRANSP:OPAQUE
+END:VEVENT
+BEGIN:VEVENT
+DTSTART:20130626T081500Z
+DTEND:20130626T093000Z
+DTSTAMP:20130613T040828Z
+UID:erp3dl9psnnlkf4phdegv270s4@google.com
+CREATED:20130601T135433Z
+DESCRIPTION:Orbit & Oculoplastics Approach Made Easy for Everyone: \nKanogr
+ at Pornpanich\, MD
+LAST-MODIFIED:20130601T135433Z
+LOCATION:Main Hall
+SEQUENCE:0
+STATUS:CONFIRMED
+SUMMARY:Orbit & Oculoplastics Approach Made Easy for Everyone
+TRANSP:OPAQUE
+END:VEVENT
+BEGIN:VEVENT
+DTSTART:20130626T063000Z
+DTEND:20130626T080000Z
+DTSTAMP:20130613T040828Z
+UID:8levmas31r07ph422t5vgkdv68@google.com
+CREATED:20130601T135340Z
+DESCRIPTION:Practical points of Glaucoma Laser Treatment\nChairmen: Somkiat
+  Asawaphureekorn\, MD\, Darin Sakiyalak\, MD\n- Laser Peripheral Iridotomy:
+  Damrong Wiwatwongwana\, MD\n- Laser Iridoplasty: Nisa Sothornwit\, MD\n- A
+ rgon Laser Trabeculoplasty: Boonchai Wangsupadilok\, MD\n- Selective Laser 
+ Trabeculoplasty: Pitipong Suramethakul\, MD\n- Diode Laser Cyclophotocoagul
+ ation: Sumalee Boonyaleephan\, MD\n- Endoscopic Diode Laser Cyclophotocoagu
+ lation: Nipon Sayawat\, MD
+LAST-MODIFIED:20130601T135340Z
+LOCATION:Lotus 12
+SEQUENCE:0
+STATUS:CONFIRMED
+SUMMARY:Glaucoma Instruction Course
+TRANSP:OPAQUE
+END:VEVENT
+BEGIN:VEVENT
+DTSTART:20130626T063000Z
+DTEND:20130626T080000Z
+DTSTAMP:20130613T040828Z
+UID:7umuombp1gsh5k06coq557btmk@google.com
+CREATED:20130601T135259Z
+DESCRIPTION:Chairman: Khun Dhaivadee Dulayajinda\, MD\nGene therapy vs Cell
+  therapy for Eye diseases: \nLaongsri Atchaneeyasakul\, MD\nPseudoesotropia
+ : is it safe to just observe? :\nPrapatsorn Patikulsila\, MD\nManagement of
+  Blind Child: SupapornTengtrisorn\, MD \nRefractive Surgery and Strabismus:
+  Sorot Wutthiphan\, MD
+LAST-MODIFIED:20130601T135259Z
+LOCATION:Lotus 3-4
+SEQUENCE:0
+STATUS:CONFIRMED
+SUMMARY:Pediatric Ophthalmology & Strabismus Symposium
+TRANSP:OPAQUE
+END:VEVENT
+BEGIN:VEVENT
+DTSTART:20130626T063000Z
+DTEND:20130626T080000Z
+DTSTAMP:20130613T040828Z
+UID:iu8qvb5mupn64eqqb9ijpifiq8@google.com
+ATTENDEE;CUTYPE=INDIVIDUAL;ROLE=REQ-PARTICIPANT;PARTSTAT=ACCEPTED;CN=31th S
+ cientific Meeting  The Royal College of Ophthalmologists of Thailand;X-NUM-
+ GUESTS=0:mailto:lqpumohbmb9j39uscmbcnj6c18@group.calendar.google.com
+CREATED:20130601T135118Z
+DESCRIPTION:Work and Play with Latest Information Technology (iPad and iPho
+ ne) for Ophthalmologists \nCourse Director: Nattawut Wanumkarng\, MD\nSpeak
+ ers (IT committees): Chavakij Bhoomibunchoo\, MD\, \nKanjana Leelapatranura
+ k\, MD\, Nattawut Wanumkarng\, MD\, Mongkol Tadarati\, MD\, Panwad Uthiyo\,
+  MD\, Rath Itthipanichpong\, MD\, Santi Ueanoraset\, MD\, Sritatath Vongkul
+ siri MD\, Thanapat Rattanapakorn\, MD\, Thanapong Somkijrungroj\, MD\, Tien
+ chai Methanoppakhun\, MD\, Warapat Wongsawad\, MD\, Yonrawee Piyacomn\, MD
+LAST-MODIFIED:20130601T135131Z
+LOCATION:Lotus 5-7
+SEQUENCE:0
+STATUS:CONFIRMED
+SUMMARY:Instruction Course: BASIC iPad and iPhone for Ophthalmologists 
+TRANSP:OPAQUE
+END:VEVENT
+BEGIN:VEVENT
+DTSTART:20130626T050000Z
+DTEND:20130626T063000Z
+DTSTAMP:20130613T040828Z
+UID:m84qgkb6gu6rqovb7kgfqsijgg@google.com
+ATTENDEE;CUTYPE=INDIVIDUAL;ROLE=REQ-PARTICIPANT;PARTSTAT=ACCEPTED;CN=31th S
+ cientific Meeting  The Royal College of Ophthalmologists of Thailand;X-NUM-
+ GUESTS=0:mailto:lqpumohbmb9j39uscmbcnj6c18@group.calendar.google.com
+CREATED:20130601T134933Z
+DESCRIPTION:R.X. Luncheon Symposium\nSpeaker: Chareenun Nuangtan\, MD\, Pic
+ hit Naripthaphan\, MD\, \nDirek Patikulsila\, MD
+LAST-MODIFIED:20130601T134944Z
+LOCATION:Lotus 12
+SEQUENCE:0
+STATUS:CONFIRMED
+SUMMARY:AL Scan\, The New Master of the IOL
+TRANSP:OPAQUE
+END:VEVENT
+BEGIN:VEVENT
+DTSTART:20130626T050000Z
+DTEND:20130626T063000Z
+DTSTAMP:20130613T040828Z
+UID:e9fsr697pcuns1aph93juvrf2g@google.com
+CREATED:20130601T134900Z
+DESCRIPTION:\nAlcon Luncheon Symposium\n- Allergy and Immunology: What shou
+ ld we know?: \nJarungchit Ngamphaiboon\, MD\n- Advance in the Diagnosis and
+  Management of Ocular Allergy:\nNgamjit Kasetsuwan\, MD\n- Practical Point 
+ in Treating Ocular Allergy: Pinnita Tanthuvanit\, MD\n- Current Concepts of
+  Topical Anti-Allergic Treatment. What’s New?:\nVarintorn Chuckpaiwong\, MD
+LAST-MODIFIED:20130601T134900Z
+LOCATION:Lotus 1-2
+SEQUENCE:0
+STATUS:CONFIRMED
+SUMMARY:New Trends in the Management of Ocular Allergy
+TRANSP:OPAQUE
+END:VEVENT
+BEGIN:VEVENT
+DTSTART:20130626T050000Z
+DTEND:20130626T063000Z
+DTSTAMP:20130613T040828Z
+UID:thuu6i1082lq1m7uq01ivfie4g@google.com
+CREATED:20130601T134253Z
+DESCRIPTION:Santen Luncheon Symposium \nRole of New PGs (Tafluprost) with N
+ early Non-preservative Moderator: Prin Rojanapongpun\, MD \nSpeaker: Ngamka
+ e Ruangvaravate\, MD
+LAST-MODIFIED:20130601T134723Z
+LOCATION:Lotus 3-4
+SEQUENCE:0
+STATUS:CONFIRMED
+SUMMARY:Role of New PGs (Tafluprost) with Nearly Non-preservative
+TRANSP:OPAQUE
+END:VEVENT
+BEGIN:VEVENT
+DTSTART:20130626T050000Z
+DTEND:20130626T063000Z
+DTSTAMP:20130613T040828Z
+UID:28cctp03e2p7cg57jgic7ds1ls@google.com
+CREATED:20130601T133930Z
+DESCRIPTION:Novartis Luncheon Symposium\n“Anti-VEGF Treatment for Retinal V
+ ascular Diseases (DME & RVO)”\nModerator: Wichai Prasartritha\, MD\nAnti-VE
+ GF treatment for DME \nRoles of VEGF in DME \nAnti-VEGF treatment for DME –
+  what factors need to be considered?: Prut Hanutsaha\, MD \nAnti-VEGF treat
+ ment for RVO\nRoles of VEGF in RVO \nAnti-VEGF treatment for RVO – what fac
+ tors need to be considered?: Nuttawut Rodanant\, MD
+LAST-MODIFIED:20130601T134647Z
+LOCATION:Main Hall
+SEQUENCE:0
+STATUS:CONFIRMED
+SUMMARY:Anti-VEGF Treatment for Retinal Vascular Diseases (DME & RVO)
+TRANSP:OPAQUE
+END:VEVENT
+BEGIN:VEVENT
+DTSTART:20130626T050000Z
+DTEND:20130626T063000Z
+DTSTAMP:20130613T040828Z
+UID:7e1cuqmvfoglv47n8dhs79ppbs@google.com
+ATTENDEE;CUTYPE=INDIVIDUAL;ROLE=REQ-PARTICIPANT;PARTSTAT=ACCEPTED;CN=31th S
+ cientific Meeting  The Royal College of Ophthalmologists of Thailand;X-NUM-
+ GUESTS=0:mailto:lqpumohbmb9j39uscmbcnj6c18@group.calendar.google.com
+CREATED:20130601T134029Z
+DESCRIPTION:Bausch&Lomb Luncheon Symposium (200)\nFrom Bench to Bedside \nM
+ oderator: Somsanguan Ausayakhun\, MD\nFluoroquinolones are not the same\, a
+ ren’t they? What’s new in Fluoroquinolones?: Vilavan Puangsricharern\, MD\n
+ How to avoid Steroid induce Glaucoma? Myths or Facts: Manchima Makornwattan
+ a\, MD
+LAST-MODIFIED:20130601T134102Z
+LOCATION:Lotus 5-7
+SEQUENCE:0
+STATUS:CONFIRMED
+SUMMARY:Key Challenges in Ocular Management
+TRANSP:OPAQUE
+END:VEVENT
+BEGIN:VEVENT
+DTSTART:20130626T030000Z
+DTEND:20130626T033000Z
+DTSTAMP:20130613T040828Z
+UID:d0bv7vn40baknof0e9hgljbpk0@google.com
+CREATED:20130601T133654Z
+DESCRIPTION:
+LAST-MODIFIED:20130601T133654Z
+LOCATION:Exhibition Hall
+SEQUENCE:0
+STATUS:CONFIRMED
+SUMMARY:Break
+TRANSP:OPAQUE
+END:VEVENT
+BEGIN:VEVENT
+DTSTART:20130626T013000Z
+DTEND:20130626T030000Z
+DTSTAMP:20130613T040828Z
+UID:8khlht5enlqllcahiqq45m572s@google.com
+CREATED:20130601T133611Z
+DESCRIPTION:Chairman: Paisan Ruamviboonsuk\, MD\n- Current Controversies ab
+ out Pterygium Management: \nUsanee Reinprayoon\, MD\, Kaevalin Lekhanont\, 
+ MD\n- OCT: Is it necessary in Current Standard Glaucoma Care?:\nWasu Suppak
+ ornthanasarn\, MD\, Vithoon Ruangsuksriwong \, MD\n- Think Different: Chair
+ at Saovaprut\, MD\, Prut Hanutsaha\, MD 
+LAST-MODIFIED:20130601T133611Z
+LOCATION:Main Hall
+SEQUENCE:0
+STATUS:CONFIRMED
+SUMMARY:Controversy in Multisubspecialty
+TRANSP:OPAQUE
+END:VEVENT
+BEGIN:VEVENT
+DTSTART:20130626T004500Z
+DTEND:20130626T020000Z
+DTSTAMP:20130613T040828Z
+UID:mc581pbknfat9ec8vanukkb4is@google.com
+CREATED:20130601T131621Z
+DESCRIPTION:
+LAST-MODIFIED:20130601T131621Z
+LOCATION:Exhibition Hall
+SEQUENCE:0
+STATUS:CONFIRMED
+SUMMARY:Coffee Break
+TRANSP:OPAQUE
+END:VEVENT
+END:VCALENDAR

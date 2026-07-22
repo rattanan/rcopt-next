@@ -1,0 +1,29 @@
+BEGIN:VCALENDAR
+PRODID:-//Google Inc//Google Calendar 70.9054//EN
+VERSION:2.0
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+X-WR-CALNAME:Academic-meeting Day 2
+X-WR-TIMEZONE:Asia/Bangkok
+X-WR-CALDESC:Day 2 : Thursday 10 July 2014
+BEGIN:VEVENT
+DTSTART:20140710T033000Z
+DTEND:20140710T050000Z
+DTSTAMP:20140707T034027Z
+UID:vfbs6d40qckn3t41ltkjrt8ilo@google.com
+CREATED:20140704T071949Z
+DESCRIPTION:Structure and Function in Glaucoma\nChairman: Manchima Makornwa
+ ttana \nCo-chairman: Anita Manassakorn\nStructure of the optic nerve head a
+ nd implications for\nglaucomatous optic neuropathy I - Jost Jonas (Germany)
+ \nStructure of the optic nerve head and implications for \nglaucomatous opt
+ ic neuropathy II - Jost Jonas (Germany)\nGlaucoma function implication - Da
+ rin Sakiyaluk (Thailand)\nStructure and function correlation - Prin Rojanap
+ ongpun (Thailand)\nCase discussion - Kessara Pathanapitoon (Thailand)
+LAST-MODIFIED:20140704T071949Z
+LOCATION:Lotus 7  
+SEQUENCE:0
+STATUS:CONFIRMED
+SUMMARY:SYM 5-L7: Glaucoma
+TRANSP:OPAQUE
+END:VEVENT
+END:VCALENDAR

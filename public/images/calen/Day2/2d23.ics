@@ -1,0 +1,33 @@
+BEGIN:VCALENDAR
+PRODID:-//Google Inc//Google Calendar 70.9054//EN
+VERSION:2.0
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+X-WR-CALNAME:Academic-meeting Day 2
+X-WR-TIMEZONE:Asia/Bangkok
+X-WR-CALDESC:Day 2 : Thursday 10 July 2014
+BEGIN:VEVENT
+DTSTART:20140710T063000Z
+DTEND:20140710T080000Z
+DTSTAMP:20140707T034029Z
+UID:t5ndpa8hb76g11dfn4rrp75nss@google.com
+CREATED:20140704T073446Z
+DESCRIPTION:Glaucoma and Uveitis Free Paper\nChairman: Jost Jonas\nCo-chair
+ man: Pitipol Choopong\nJudge: Boonsong Wanichwecharungruang\nFP8-01: Change
+ s in corneal endothelial cells after Baerveldt shunt implantation in refrac
+ tory glaucoma- Sakaorat Petchyim (Thailand)\nFP8-02: Prevalence of CMV reti
+ nitis in HIV infection at Sanglah Hospital Denpasar- Juliari I gusti ayu ma
+ de (Indonesia)\nFP8-05: Impact of triple vessels coronary artery disease on
+  retinal nerve fiber layer- Yee ling Neoh (Malaysia)\nFP8-08: Incidence rat
+ e and risk factors for contralateral eye involvement among patients with AI
+ DS and cytomegalovirus retinitis treated with local therapy- Wantanee Sitti
+ varakul (Thailand)\nFP8-09: Relationship of intraocular pressure with centr
+ al aortic systolic pressure-  Andrew Tsai (Singapore)
+LAST-MODIFIED:20140704T073455Z
+LOCATION:Lotus 7
+SEQUENCE:0
+STATUS:CONFIRMED
+SUMMARY:FP8
+TRANSP:OPAQUE
+END:VEVENT
+END:VCALENDAR

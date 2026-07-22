@@ -3,7 +3,7 @@ import { resolveLegacyAsset } from "@/lib/legacy-assets";
 
 describe("legacy asset resolver", () => {
   it("normalizes a legacy upload filename without exposing a local path", () => {
-    expect(resolveLegacyAsset("poster one.jpg", "uploads", "https://legacy.example.org/")).toBe("https://legacy.example.org/images/uploads/poster%20one.jpg");
+    expect(resolveLegacyAsset("poster one.jpg", "uploads", "https://legacy.example.org/")).toBe("/images/uploads/poster%20one.jpg");
   });
 
   it("rejects traversal and unsafe protocols", () => {
@@ -13,7 +13,7 @@ describe("legacy asset resolver", () => {
   });
 
   it("supports the fixed legacy sponsor-logo folders", () => {
-    expect(resolveLegacyAsset("logo-avc.png", "banners", "https://legacy.example.org")).toBe("https://legacy.example.org/images/banners/logo-avc.png");
-    expect(resolveLegacyAsset("topcon.png", "banner2019", "https://legacy.example.org")).toBe("https://legacy.example.org/images/banner2019/topcon.png");
+    expect(resolveLegacyAsset("logo-avc.png", "banners", "https://legacy.example.org")).toBe("/images/banners/logo-avc.png");
+    expect(resolveLegacyAsset("topcon.png", "banner2019", "https://legacy.example.org")).toBe("/images/banner2019/topcon.png");
   });
 });

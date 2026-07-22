@@ -1,0 +1,36 @@
+BEGIN:VCALENDAR
+PRODID:-//Google Inc//Google Calendar 70.9054//EN
+VERSION:2.0
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+X-WR-CALNAME:Academic-meeting Day 2
+X-WR-TIMEZONE:Asia/Bangkok
+X-WR-CALDESC:Day 2 : Thursday 10 July 2014
+BEGIN:VEVENT
+DTSTART:20140710T013000Z
+DTEND:20140710T030000Z
+DTSTAMP:20140707T034027Z
+UID:0927717iq4k02ik147heaosaks@google.com
+CREATED:20140704T070019Z
+DESCRIPTION:Free Paper Public Health \nChairman: Watanee Jenchitr\nCo-chair
+ man: Farida Sirlan\nJudge: Apirak Chaiwiratana\nFP4-01: High prevalence of 
+ myopia among first year-medical students of Faculty of Medicine Universitas
+  Gadjah Mada\, Yogyakarta\, Indonesia –Agung Nugroho (Indonesia)\nFP4-02: D
+ iabetic retinopathy screening in Brunei Darussalam- Nadir Ali (Brunei Darus
+ salam)\nFP4-03: Visual acuity improvement and cost saving of vitrectomy bet
+ ween local anesthesia and general anesthesia- Gilbert WS Simanjuntak (Indon
+ esia)\nFP4-05: Validation study to prevalence of blind resulted from NHBR 2
+ 013- Farida Sirlan (Indonesia)\nFP4-06: A retrospective review on the cause
+ s of blindness and visual impairment among children who were enrolled in a 
+ school for the blind in Manila Philippines from 1999 to 2012- Carlos Chua (
+ Philippines)\nFP4-07: Prevalence of glaucoma and diabetic retinopathy in th
+ e elderly Javanese Indonesian population: The Yogyakarta eye study- Suhardj
+ o Ranu (Indonesia)
+LAST-MODIFIED:20140704T070019Z
+LOCATION:Lotus 12
+SEQUENCE:0
+STATUS:CONFIRMED
+SUMMARY:FP4
+TRANSP:OPAQUE
+END:VEVENT
+END:VCALENDAR

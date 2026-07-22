@@ -1,0 +1,27 @@
+BEGIN:VCALENDAR
+PRODID:-//Google Inc//Google Calendar 70.9054//EN
+VERSION:2.0
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+X-WR-CALNAME:Academic-meeting Day 2
+X-WR-TIMEZONE:Asia/Bangkok
+X-WR-CALDESC:Day 2 : Thursday 10 July 2014
+BEGIN:VEVENT
+DTSTART:20140710T050000Z
+DTEND:20140710T063000Z
+DTSTAMP:20140707T034028Z
+UID:jcdcck2nbmbmf3ubhuq1k6uvck@google.com
+CREATED:20140704T073128Z
+DESCRIPTION:New Anti-VEGF (Aflibercept) for Wet-AMD treatment: \nONCE EVERY
+  2 MONTHS\, improves vision with proactive treatment\nChairman: Nuttawut   
+ Rodanant\nAflibercept\; MOA\, efficacy\, safety and evidences from clinical
+  studies- Prut Hanutsaha (Thailand)\nAflibercept in real-life\; clinical ou
+ tcome in patients- Ji Eun Lee (Korea)
+LAST-MODIFIED:20140704T073128Z
+LOCATION:Lotus 12
+SEQUENCE:0
+STATUS:CONFIRMED
+SUMMARY:LH2-12: Bayer Luncheon Symposium
+TRANSP:OPAQUE
+END:VEVENT
+END:VCALENDAR

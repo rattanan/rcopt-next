@@ -1,0 +1,28 @@
+BEGIN:VCALENDAR
+PRODID:-//Google Inc//Google Calendar 70.9054//EN
+VERSION:2.0
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+X-WR-CALNAME:Academic-meeting Day 2
+X-WR-TIMEZONE:Asia/Bangkok
+X-WR-CALDESC:Day 2 : Thursday 10 July 2014
+BEGIN:VEVENT
+DTSTART:20140710T033000Z
+DTEND:20140710T050000Z
+DTSTAMP:20140707T034027Z
+UID:n249i1107e8o1bavtook2t5i1c@google.com
+CREATED:20140704T071702Z
+DESCRIPTION:Corneal Infection\nChairman: Winai Chaidaroon\nCo-chairman: Rub
+ en Lim Seong\nConfocal Microscopy: A helpful instrument to detect ocular pa
+ thogens- Olan Suwan-apichon (Thailand)\nViral infection- Ruben Lim Siong (P
+ hilippines)\nParasitic infection- Ngamjit Kasetsuwan (Thailand)\nFungal inf
+ ection- Fatma  Asyari (Indonesia)\nBacterial infection- Napaporn Tananuwat 
+ (Thailand)
+LAST-MODIFIED:20140704T071702Z
+LOCATION:Convention A
+SEQUENCE:0
+STATUS:CONFIRMED
+SUMMARY:SYM 5-PL: Cornea
+TRANSP:OPAQUE
+END:VEVENT
+END:VCALENDAR

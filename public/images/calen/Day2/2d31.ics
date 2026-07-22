@@ -1,0 +1,32 @@
+BEGIN:VCALENDAR
+PRODID:-//Google Inc//Google Calendar 70.9054//EN
+VERSION:2.0
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+X-WR-CALNAME:Academic-meeting Day 2
+X-WR-TIMEZONE:Asia/Bangkok
+X-WR-CALDESC:Day 2 : Thursday 10 July 2014
+BEGIN:VEVENT
+DTSTART:20140710T091500Z
+DTEND:20140710T100000Z
+DTSTAMP:20140707T034030Z
+UID:mdp8p3rlq10fvmkd1gh0vqjo04@google.com
+CREATED:20140704T073948Z
+DESCRIPTION:Neuro-ophthalmology Free Paper\nChairman: Anuchit Poonyathalang
+                             \nCo-chairman: Kitthisak Kitthaweesin\nJudge:  
+ Parima Hirunwiwatkul\nFP2-01:Role of Zinc (Zn) in Ethambutol-induced neuror
+ etinopathies: Functional and morphologic assessment in rabbit model- Erwin 
+ Palisoc (Philippines)\nFP2-03: Etiology of optic neuropathy in Cipto Mangun
+ kusumo Hospital\, Jakarta Indonesia\, 2009-2011- Syntia Shidik (Indonesia)\
+ nFP2-04: Low conversion rate of ocular to generalized myasthenia gravis in 
+ an Asian population- Keivin Teo (Singapore)\nFP2-05: Incipient non-arteriti
+ c anterior ischaemic optic neuropathy: a distinct clinical entity- Daniel C
+ hua (Singapore)
+LAST-MODIFIED:20140704T073948Z
+LOCATION:Lotus 12
+SEQUENCE:0
+STATUS:CONFIRMED
+SUMMARY:FP2
+TRANSP:OPAQUE
+END:VEVENT
+END:VCALENDAR

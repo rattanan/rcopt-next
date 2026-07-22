@@ -12,6 +12,8 @@ const eslintConfig = defineConfig([
     "out/**",
     "build/**",
     "next-env.d.ts",
+    // Static legacy files copied into public are served verbatim, not app code.
+    "public/**",
   ]),
 ]);
 

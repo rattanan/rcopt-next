@@ -39,6 +39,20 @@ ADMIN_WRITE_ENABLED=false
 ADMIN_SESSION_STORE_PATH=.runtime/admin-sessions.json
 ```
 
+### Production images
+
+รูปเดิมถูกเก็บใน `public/images` แล้ว จึงถูกเรียกตรงผ่าน HTTPS ของเว็บไซต์ใหม่ เช่น `/images/uploads/example.jpg` โดยไม่ต้องใช้ `LEGACY_ASSET_BASE_URL` หรือ `/api/legacy-assets`.
+
+สำหรับอัปโหลดรูปจาก Admin ให้ตั้ง `LEGACY_UPLOAD_PATH` เป็น absolute path ของ `public/images` บน production แล้ว restart service/deployment:
+
+```env
+SITE_URL=https://rcopt.rattanan.dev
+NEXT_PUBLIC_SITE_URL=https://rcopt.rattanan.dev
+LEGACY_UPLOAD_PATH=/absolute/path/to/rcopt-next/public/images
+```
+
+`LEGACY_UPLOAD_PATH` ต้องชี้ไปที่ `public/images` โดยตรง และ process ของ Next.js ต้องเขียนได้ที่ `uploads`/`member`. สำหรับ Docker ต้อง mount persistent volume ไปที่ path นี้ เพราะไฟล์ใน `public` ที่เขียนหลัง build จะหายเมื่อ container ถูกแทนที่ หากไม่มีการ mount volume.
+
 เริ่ม development server:
 
 ```bash

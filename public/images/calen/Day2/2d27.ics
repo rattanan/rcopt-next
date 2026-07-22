@@ -1,0 +1,29 @@
+BEGIN:VCALENDAR
+PRODID:-//Google Inc//Google Calendar 70.9054//EN
+VERSION:2.0
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+X-WR-CALNAME:Academic-meeting Day 2
+X-WR-TIMEZONE:Asia/Bangkok
+X-WR-CALDESC:Day 2 : Thursday 10 July 2014
+BEGIN:VEVENT
+DTSTART:20140710T083000Z
+DTEND:20140710T100000Z
+DTSTAMP:20140704T113633Z
+UID:cismg3h8ebqib68l7sh379ckj8@google.com
+CREATED:20140704T073646Z
+DESCRIPTION:Interesting Cases Discussion: Pediatric Ophthalmology and \nStr
+ abismus\nChairman: Juthathip Hiriotappa\nCo-chairman: Sei Wei Leo\nComplex 
+ strabismus: \nSei Wei Leo (Singapore)\nZena Lim (Singapore)\nUnilateral nys
+ tagmus: Chatchai Ployprasith (Thailand)\nAcquired esotropia :Warakorn Thiam
+ that (Thailand)\nFrom hell to heaven: Nutsuchar Wangtiraumnuay (Thailand)\n
+ Multiple retinal masses in infant- Pokpong Chantarasomboon (Thailand)\nCran
+ iofacial cleft and strabismus- Wadakarn Wuttisiri (Thailand)
+LAST-MODIFIED:20140704T073646Z
+LOCATION:Lotus 3-4
+SEQUENCE:0
+STATUS:CONFIRMED
+SUMMARY:SYM 10-L1: Pediatric Ophthalmology
+TRANSP:OPAQUE
+END:VEVENT
+END:VCALENDAR 
