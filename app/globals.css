@@ -2,6 +2,7 @@
 
 .admin-nav-link { display: inline-flex; align-items: center; gap: 9px; border-radius: 10px; padding: 10px 12px; color: #5e5359; font-size: 14px; font-weight: 700; white-space: nowrap; }
 .admin-nav-link:hover { background: var(--primary-light); color: var(--primary-dark); }
+.admin-nav-link-active { background: var(--primary-light); color: var(--primary-dark); }
 
 :root { --background: #fff; --ink: #29262a; --primary: #c84478; --primary-dark: #a82e5f; --primary-light: #fce9f1; --secondary: #fff7fa; --border: #ecdde4; --muted: #766f74; --shadow: 0 18px 50px rgba(155, 62, 98, .10); }
 @theme inline { --color-background: var(--background); --color-foreground: var(--ink); --font-sans: Arial, sans-serif; }
