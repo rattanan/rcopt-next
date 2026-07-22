@@ -29,7 +29,7 @@ export function NavigationMenu({ items }: Props) {
   const [isOpen, setIsOpen] = useState(false);
 
   return <>
-    <nav className="hidden items-center gap-1 lg:flex" aria-label="เมนูหลัก">
+    <nav className="hidden items-center gap-1 min-[900px]:flex" aria-label="เมนูหลัก">
       {items.map((item) => item.separator ? null : (
         <div key={item.id} className="menu-root-item">
           <MenuLink item={item} className="nav-link menu-root-link" />
@@ -37,10 +37,10 @@ export function NavigationMenu({ items }: Props) {
         </div>
       ))}
     </nav>
-    <button className="icon-button lg:hidden" type="button" aria-label={isOpen ? "ปิดเมนู" : "เปิดเมนู"} aria-expanded={isOpen} onClick={() => setIsOpen((open) => !open)}>
+    <button className="icon-button min-[900px]:hidden" type="button" aria-label={isOpen ? "ปิดเมนู" : "เปิดเมนู"} aria-expanded={isOpen} onClick={() => setIsOpen((open) => !open)}>
       {isOpen ? <X size={21} /> : <Menu size={21} />}
     </button>
-    {isOpen && <nav className="mobile-menu lg:hidden" aria-label="เมนูหลักสำหรับมือถือ">
+    {isOpen && <nav className="mobile-menu min-[900px]:hidden" aria-label="เมนูหลักสำหรับมือถือ">
       {items.map((item) => item.separator ? null : (
         <details key={item.id} className="mobile-menu-item" open={item.children.length === 0 ? undefined : false}>
           <summary>

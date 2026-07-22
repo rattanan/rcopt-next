@@ -1,5 +1,7 @@
 import { createHash, timingSafeEqual } from "node:crypto";
 
+export function createLegacyMd5Password(password: string): string { return createHash("md5").update(password, "utf8").digest("hex"); }
+
 export function verifyLegacyMd5Password(password: string, legacyHash: string): boolean {
   const submitted = createHash("md5").update(password, "utf8").digest("hex");
   const expected = legacyHash.trim().toLowerCase();

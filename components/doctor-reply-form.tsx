@@ -1,0 +1,8 @@
+"use client";
+
+import { useActionState } from "react";
+import { Send } from "lucide-react";
+import { submitDoctorReply, type CommunityActionState } from "@/app/community/questions/actions";
+
+const initialState: CommunityActionState = {};
+export function DoctorReplyForm({ topicId, firstName }: { topicId: number; firstName: string }) { const [state, action, pending] = useActionState(submitDoctorReply, initialState); return <section className="card mt-7 border-[#dbe8dc] p-6"><p className="eyebrow text-emerald-700">DOCTOR RESPONSE</p><h2 className="mt-2 text-xl font-extrabold">ตอบคำถามในฐานะจักษุแพทย์</h2><p className="mt-1 text-sm text-[var(--muted)]">เข้าสู่ระบบในชื่อ {firstName} แล้ว</p><form action={action} className="mt-5 grid gap-4"><input type="hidden" name="topicId" value={topicId} /><label htmlFor="doctor-reply" className="sr-only">คำตอบ</label><textarea id="doctor-reply" name="body" required minLength={10} maxLength={5000} rows={5} placeholder="ให้ข้อมูลทั่วไปอย่างเหมาะสม และแนะนำให้พบแพทย์เมื่อจำเป็น" className="w-full rounded-xl border border-[var(--border)] bg-white p-4 leading-6 outline-none focus:border-emerald-600 focus:ring-2 focus:ring-emerald-100" />{state.error && <p className="rounded-xl bg-[#fff0f4] px-4 py-3 text-sm text-[#9b2f59]" role="alert">{state.error}</p>}{state.success && <p className="rounded-xl bg-emerald-50 px-4 py-3 text-sm text-emerald-800" role="status">{state.success}</p>}<button type="submit" disabled={pending} className="inline-flex w-fit items-center gap-2 rounded-xl bg-emerald-700 px-5 py-3 text-sm font-bold text-white disabled:opacity-60"><Send size={16} />{pending ? "กำลังเผยแพร่…" : "เผยแพร่คำตอบ"}</button></form></section>; }

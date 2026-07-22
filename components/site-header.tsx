@@ -3,10 +3,12 @@ import Image from "next/image";
 import { LogIn, UserRound } from "lucide-react";
 import { NavigationMenu } from "./navigation-menu";
 import { getActiveAdminHeaderIdentity } from "@/lib/auth/guards";
+import { getActiveDoctorIdentity } from "@/lib/auth/guards";
 import { getPublicMenu } from "@/repositories/menu-repository";
 
 export async function SiteHeader() {
-  const [menu, identity] = await Promise.all([getPublicMenu(), getActiveAdminHeaderIdentity()]);
+  const [menu, doctorIdentity, adminIdentity] = await Promise.all([getPublicMenu(), getActiveDoctorIdentity(), getActiveAdminHeaderIdentity()]);
+  const identity = doctorIdentity ? { firstName: doctorIdentity.firstName, href: "/community/questions" } : adminIdentity ? { firstName: adminIdentity.firstName, href: "/admin" } : undefined;
 
   return (
     <header className="sticky top-0 z-20 border-b border-[var(--border)] bg-white/95 backdrop-blur">
@@ -17,7 +19,7 @@ export async function SiteHeader() {
         </Link>
         <div className="flex items-center gap-2 sm:gap-3">
           <NavigationMenu items={menu} />
-          {identity ? <Link href="/admin" className="hidden items-center gap-2 rounded-xl bg-[var(--primary-light)] px-3 py-2 text-sm font-bold text-[var(--primary-dark)] sm:inline-flex"><UserRound size={16} />Hi, {identity.firstName}</Link> : <Link href="/admin/login" className="hidden items-center gap-2 rounded-xl border border-[var(--border)] px-3 py-2 text-sm font-bold text-[var(--primary-dark)] hover:bg-[var(--primary-light)] sm:inline-flex"><LogIn size={16} />เข้าสู่ระบบ</Link>}
+          {identity ? <Link href={identity.href} className="hidden items-center gap-2 rounded-xl bg-[var(--primary-light)] px-3 py-2 text-sm font-bold text-[var(--primary-dark)] sm:inline-flex"><UserRound size={16} />Hi, {identity.firstName}</Link> : <Link href="/login" className="hidden items-center gap-2 rounded-xl border border-[var(--border)] px-3 py-2 text-sm font-bold text-[var(--primary-dark)] hover:bg-[var(--primary-light)] sm:inline-flex"><LogIn size={16} />เข้าสู่ระบบ</Link>}
         </div>
       </div>
     </header>

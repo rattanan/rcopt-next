@@ -4,9 +4,10 @@
 
 ## ความสามารถปัจจุบัน
 
-- เว็บไซต์สาธารณะ: หน้าแรก, ข่าวสาร, บทความ, ค้นหา/รายละเอียดจักษุแพทย์, กระดานปรึกษาจักษุแพทย์แบบอ่านอย่างเดียว, About และ Contact
+- เว็บไซต์สาธารณะ: หน้าแรก, ข่าวสาร, บทความ, ค้นหา/รายละเอียดจักษุแพทย์, กระดานปรึกษาจักษุแพทย์, About และ Contact
 - Legacy compatibility: redirect สำหรับ URL `index.php?r=...` ที่ย้ายแล้ว และ asset proxy ที่จำกัดเส้นทาง
 - Content safety: prepared statements, Zod validation, HTML sanitization และ redaction สำหรับข้อมูลติดต่อในกระดานสาธารณะ
+- Community: ประชาชนส่งคำถามผ่าน CAPTCHA (รอตรวจสอบก่อนเผยแพร่) และจักษุแพทย์สมาชิก active login เพื่อตอบคำถามได้
 - Bot protection: validation/rate limit สำหรับ legacy URL และหน้าสาธารณะที่ query ฐานข้อมูล พร้อม CDN cache headers
 - SEO: metadata, canonical URL, sitemap และ robots
 - Admin Phase 3 (เริ่มต้น): `/admin/login`, Admin guard, dashboard แบบอ่านอย่างเดียว และ feature flag สำหรับปิดการเขียนข้อมูล
