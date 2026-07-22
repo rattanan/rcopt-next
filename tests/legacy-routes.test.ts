@@ -9,6 +9,8 @@ describe("legacy URL compatibility", () => {
     expect(mapLegacyRoute("arart010/detail", "2235")).toBe("/articles/2235");
     expect(mapLegacyRoute("wbtpc010/list", "1")).toBe("/community/questions");
     expect(mapLegacyRoute("wbtpc010/detail", "7659")).toBe("/community/questions/7659");
+    expect(mapLegacyRoute("site/contact", null)).toBe("/contact");
+    expect(mapLegacyRoute("site/page", null, "about")).toBe("/about");
   });
 
   it("does not manufacture a destination for unsafe ids", () => {

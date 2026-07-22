@@ -11,4 +11,9 @@ describe("legacy asset resolver", () => {
     expect(resolveLegacyAsset("javascript:alert(1)", "banner", "https://legacy.example.org")).toBe("/brand/rcopt-crest.png");
     expect(resolveLegacyAsset("%", "uploads", "https://legacy.example.org")).toBe("/brand/rcopt-crest.png");
   });
+
+  it("supports the fixed legacy sponsor-logo folders", () => {
+    expect(resolveLegacyAsset("logo-avc.png", "banners", "https://legacy.example.org")).toBe("https://legacy.example.org/images/banners/logo-avc.png");
+    expect(resolveLegacyAsset("topcon.png", "banner2019", "https://legacy.example.org")).toBe("https://legacy.example.org/images/banner2019/topcon.png");
+  });
 });

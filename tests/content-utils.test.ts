@@ -17,6 +17,9 @@ describe("legacy content utilities", () => {
   it("redacts contact details and identifies the legacy default logo", () => {
     expect(redactPublicContactInfo("ติดต่อ test@example.org หรือ 081-234-5678")).not.toContain("example.org");
     expect(hasLegacyContentImage("rcoptapplogo.jpg")).toBe(false);
+    expect(hasLegacyContentImage("1623rcoptapplogo.jpg")).toBe(false);
+    expect(hasLegacyContentImage("2234original.jpg")).toBe(false);
+    expect(hasLegacyContentImage("original.jpg")).toBe(false);
     expect(hasLegacyContentImage("cover.jpg")).toBe(true);
   });
 

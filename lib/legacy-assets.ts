@@ -1,6 +1,6 @@
 import { env } from "@/lib/env";
 
-export type LegacyAssetArea = "uploads" | "banner" | "member";
+export type LegacyAssetArea = "uploads" | "banner" | "member" | "banners" | "banner2019";
 
 const PLACEHOLDER = "/brand/rcopt-crest.png";
 

@@ -42,5 +42,10 @@ export function redactPublicContactInfo(value: string): string {
 }
 
 export function hasLegacyContentImage(path: string | null | undefined): boolean {
-  return Boolean(path?.trim() && !/rcoptapplogo\.jpg$/iu.test(path));
+  const value = path?.trim();
+  if (!value) return false;
+  // The legacy CMS reused these RCOPT crest files as article thumbnails, including
+  // ID-prefixed copies such as "2234original.jpg". Render them as the compact
+  // branded fallback instead of cropping a crest into the thumbnail frame.
+  return !/(?:rcoptapplogo|\d*original)\.(?:jpe?g|png)$/iu.test(value);
 }
