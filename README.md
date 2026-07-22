@@ -7,6 +7,7 @@
 - เว็บไซต์สาธารณะ: หน้าแรก, ข่าวสาร, บทความ, ค้นหา/รายละเอียดจักษุแพทย์, กระดานปรึกษาจักษุแพทย์แบบอ่านอย่างเดียว, About และ Contact
 - Legacy compatibility: redirect สำหรับ URL `index.php?r=...` ที่ย้ายแล้ว และ asset proxy ที่จำกัดเส้นทาง
 - Content safety: prepared statements, Zod validation, HTML sanitization และ redaction สำหรับข้อมูลติดต่อในกระดานสาธารณะ
+- Bot protection: validation/rate limit สำหรับ legacy URL และหน้าสาธารณะที่ query ฐานข้อมูล พร้อม CDN cache headers
 - SEO: metadata, canonical URL, sitemap และ robots
 - Admin Phase 3 (เริ่มต้น): `/admin/login`, Admin guard, dashboard แบบอ่านอย่างเดียว และ feature flag สำหรับปิดการเขียนข้อมูล
 
@@ -87,6 +88,7 @@ npm run build
 - [Audit log strategy](docs/audit-log-strategy.md)
 - [Security review](docs/security-review.md)
 - [Migration plan](docs/migration-plan.md)
+- [Bot and database-load protection](docs/bot-protection.md)
 
 ## สถานะงาน
 
