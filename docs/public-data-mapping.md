@@ -13,6 +13,7 @@
 | Category | `arcat010.id` | `name`, `dsca` | 34 categories. Category 1 is mapped to `/news`; other published categories to `/articles`. |
 | Community / jobs (not news) | `wbtpc010.id`, `wbcat010.id` | `name`, `dsca`, `pict`, `yutb`, `crdt`, `enbl`; messages `wbtpc011` | 3,561 total; 3,280 enabled. These are public discussion/job records, not editorial news, and are deferred. |
 | Banner | `cmban010.id` | `name`, `dsca`, `pimg`, `href`, `enbl` | 3 rows, 2 enabled. Image filenames resolve as `images/banner/<filename>`. `cmban020` is a dated campaign table (1 historic row) and is not used for the live hero. |
+| Video | `vdo.id` | `title`, `detail`, legacy Flash `embed`, `post_date`, `ordering`, `activated` | 52 rows. The new site extracts only strict 11-character YouTube IDs from enabled legacy embeds and renders a modern privacy-enhanced YouTube iframe. |
 | Static page | No dedicated static-page table was found | Legacy informational pages are stored as `arart010` records in categories such as 3 (about RCOPT), 11–13 (organization information) | New shell routes remain source-configured until each public category/page mapping is reviewed. |
 
 ## Legacy files and language

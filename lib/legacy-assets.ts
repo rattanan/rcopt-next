@@ -28,10 +28,11 @@ export function resolveLegacyAsset(
     // Legacy rows normally store a filename only. Relative paths are validated below.
   }
 
-  if (!baseUrl || !isSafeRelativePath(value)) return PLACEHOLDER;
-  const cleanBase = baseUrl.replace(/\/+$/, "");
+  if (!isSafeRelativePath(value)) return PLACEHOLDER;
   const cleanPath = value.replace(/^\.\/+/u, "").replace(/\/+/gu, "/");
   if (env.LEGACY_UPLOAD_PATH) return `/api/legacy-assets/${area}/${encodeURIComponent(cleanPath).replace(/%2F/gu, "/")}`;
+  if (!baseUrl) return PLACEHOLDER;
+  const cleanBase = baseUrl.replace(/\/+$/, "");
   return `${cleanBase}/images/${area}/${encodeURIComponent(cleanPath).replace(/%2F/gu, "/")}`;
 }
 
