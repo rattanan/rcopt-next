@@ -5,7 +5,7 @@ import { db } from "@/lib/db";
 export type PublicVideo = { id: number; youtubeId: string; title: string; description: string | null };
 
 export function extractYouTubeId(embed: string): string | undefined {
-  const match = embed.match(/(?:youtube\.com\/(?:v|embed)/|youtu\.be\/)([A-Za-z0-9_-]{11})/u);
+  const match = embed.match(/(?:youtube\.com\/(?:v|embed)\/|youtu\.be\/)([A-Za-z0-9_-]{11})/u);
   return match?.[1];
 }
 
