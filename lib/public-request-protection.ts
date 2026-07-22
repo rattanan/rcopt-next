@@ -4,10 +4,10 @@ type RateLimit = { maximum: number; windowMs: number };
 type RateEntry = { count: number; resetAt: number };
 
 const LIMITS: Record<ProtectedRequestKind, RateLimit> = {
-  legacy: { maximum: 12, windowMs: 60_000 },
-  listing: { maximum: 30, windowMs: 60_000 },
-  detail: { maximum: 60, windowMs: 60_000 },
-  health: { maximum: 10, windowMs: 60_000 },
+  legacy: { maximum: 60, windowMs: 60_000 },
+  listing: { maximum: 120, windowMs: 60_000 },
+  detail: { maximum: 240, windowMs: 60_000 },
+  health: { maximum: 30, windowMs: 60_000 },
 };
 
 export function classifyProtectedRequest(pathname: string): ProtectedRequestKind | undefined {
@@ -28,7 +28,7 @@ export function isSafePublicQuery(searchParams: URLSearchParams, kind: Protected
 }
 
 export function clientAddress(headers: Headers): string {
-  return headers.get("x-forwarded-for")?.split(",")[0]?.trim() || headers.get("x-real-ip")?.trim() || "unknown";
+  return headers.get("cf-connecting-ip")?.trim() || headers.get("x-forwarded-for")?.split(",")[0]?.trim() || headers.get("x-real-ip")?.trim() || "unknown";
 }
 
 export class PublicRequestRateLimiter {

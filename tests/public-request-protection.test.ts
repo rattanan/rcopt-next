@@ -11,7 +11,7 @@ describe("public request protection", () => {
 
   it("limits a legacy client while allowing short CDN caching for public pages", () => {
     const limiter = new PublicRequestRateLimiter();
-    for (let index = 0; index < 12; index += 1) expect(limiter.check("198.51.100.10", "legacy", 0).allowed).toBe(true);
+    for (let index = 0; index < 60; index += 1) expect(limiter.check("198.51.100.10", "legacy", 0).allowed).toBe(true);
     expect(limiter.check("198.51.100.10", "legacy", 0)).toMatchObject({ allowed: false, retryAfterSeconds: 60 });
     expect(publicCacheControl("detail")).toContain("s-maxage=300");
   });
