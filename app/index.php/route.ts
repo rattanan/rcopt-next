@@ -6,5 +6,5 @@ export function GET(request: NextRequest) {
   const id = request.nextUrl.searchParams.get("id");
   const destination = mapLegacyRoute(route, id);
   if (destination) return NextResponse.redirect(new URL(destination, request.url), 301);
-  return NextResponse.redirect(new URL("/", request.url), 302);
+  return new NextResponse("Not found", { status: 404, headers: { "Content-Type": "text/plain; charset=utf-8" } });
 }

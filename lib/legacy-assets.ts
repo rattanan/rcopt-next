@@ -1,6 +1,6 @@
 import { env } from "@/lib/env";
 
-export type LegacyAssetArea = "uploads" | "banner";
+export type LegacyAssetArea = "uploads" | "banner" | "member";
 
 const PLACEHOLDER = "/brand/rcopt-crest.png";
 
@@ -31,6 +31,7 @@ export function resolveLegacyAsset(
   if (!baseUrl || !isSafeRelativePath(value)) return PLACEHOLDER;
   const cleanBase = baseUrl.replace(/\/+$/, "");
   const cleanPath = value.replace(/^\.\/+/u, "").replace(/\/+/gu, "/");
+  if (env.LEGACY_UPLOAD_PATH) return `/api/legacy-assets/${area}/${encodeURIComponent(cleanPath).replace(/%2F/gu, "/")}`;
   return `${cleanBase}/images/${area}/${encodeURIComponent(cleanPath).replace(/%2F/gu, "/")}`;
 }
 

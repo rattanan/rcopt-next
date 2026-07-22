@@ -11,5 +11,6 @@ describe("legacy URL compatibility", () => {
 
   it("does not manufacture a destination for unsafe ids", () => {
     expect(mapLegacyRoute("users/profile", "x")).toBeUndefined();
+    expect(mapLegacyRoute("wbtpc010/list", "1")).toBeUndefined();
   });
 });
