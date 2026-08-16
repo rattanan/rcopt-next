@@ -41,3 +41,6 @@ yarn-error.log*
 next-env.d.ts
 /.runtime/
 /backups/
+
+# Legacy user-uploaded media is deployed and backed up separately from Git.
+/public/images/
