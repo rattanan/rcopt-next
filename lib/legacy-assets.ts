@@ -28,6 +28,11 @@ export function resolveLegacyAsset(
 
   if (!isSafeRelativePath(value)) return PLACEHOLDER;
   const cleanPath = value.replace(/^\.\/+/u, "").replace(/\/+/gu, "/");
+  // Runtime uploads must be read dynamically: Next public assets are indexed
+  // when the server starts, so newly uploaded files are not available there.
+  if (area === "member" && /^profile-\d+-[0-9a-f-]+\.(?:jpe?g|png|gif|webp)$/iu.test(cleanPath)) {
+    return `/api/legacy-assets/member/${encodeURIComponent(cleanPath)}`;
+  }
   // Legacy images are copied into public/images, so serve them from the same
   // HTTPS origin without a file-system or remote-host proxy.
   void baseUrl;
