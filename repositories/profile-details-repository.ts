@@ -13,14 +13,14 @@ export type TextDetail = { id: number; details: string; visibilityId: number };
 export type ContactDetail = { id: number; name: string; details: string; address: string; provinceId: number; districtId: number; postcode: string; telephone: string; mobile: string; email: string; contactTypeId: number; visibilityId: number; gps: string; mapUrl: string; url: string };
 export type SocialDetail = { id: number; socialTypeId: number; customSocial: string; name: string; url: string; visibilityId: number };
 export type GalleryDetail = { id: number; name: string; details: string; picture: string; imageUrl: string; createdAt: string; isProfilePicture: boolean; visibilityId: number };
-export type ProfileDetails = { education: EducationDetail[]; educationOverview: TextDetail[]; profession: TextDetail[]; academic: TextDetail[]; contacts: ContactDetail[]; social: SocialDetail[]; gallery: GalleryDetail[]; educationTypes: EducationOption[]; contactTypes: ContactTypeOption[]; socialTypes: SocialTypeOption[]; visibility: VisibilityOption[] };
+export type ProfileDetails = { provinces: VisibilityOption[]; districts: (VisibilityOption & { provinceId: number })[]; education: EducationDetail[]; educationOverview: TextDetail[]; profession: TextDetail[]; academic: TextDetail[]; contacts: ContactDetail[]; social: SocialDetail[]; gallery: GalleryDetail[]; educationTypes: EducationOption[]; contactTypes: ContactTypeOption[]; socialTypes: SocialTypeOption[]; visibility: VisibilityOption[] };
 
 type OptionRow = RowDataPacket & { id: number; name: string };
 const optionMap = (row: OptionRow) => ({ id: Number(row.id), name: String(row.name) });
 
 export async function getProfileDetails(userId: number): Promise<ProfileDetails> {
   await connection();
-  const [education, profession, educationOverview, academic, contacts, social, gallery, educationTypes, contactTypes, socialTypes, visibility] = await Promise.all([
+  const [education, profession, educationOverview, academic, contacts, social, gallery, educationTypes, contactTypes, socialTypes, visibility, provinces, districts] = await Promise.all([
     db.execute<(RowDataPacket & { id: number; insi: string | null; subs: string | null; gdyr: number | null; honr: string | null; dsca: string | null; uredu020_id: number; urpms010_id: number })[]>("SELECT id,insi,subs,gdyr,honr,dsca,uredu020_id,urpms010_id FROM uredu010 WHERE crby_tbl_users=? ORDER BY orby,id", [userId]),
     db.execute<(RowDataPacket & { id: number; dsca: string | null; urpms010_id: number })[]>("SELECT id,dsca,urpms010_id FROM urprf060 WHERE crby_tbl_users=? AND type='Profession' ORDER BY orby,id", [userId]),
     db.execute<(RowDataPacket & { id: number; dsca: string | null; urpms010_id: number })[]>("SELECT id,dsca,urpms010_id FROM urprf060 WHERE crby_tbl_users=? AND type='Education' ORDER BY orby,id", [userId]),
@@ -32,8 +32,11 @@ export async function getProfileDetails(userId: number): Promise<ProfileDetails>
     db.execute<OptionRow[]>("SELECT id,name FROM urcon011 ORDER BY id"),
     db.execute<OptionRow[]>("SELECT id,name FROM ursoc011 ORDER BY id"),
     db.execute<OptionRow[]>("SELECT id,name FROM urpms010 ORDER BY id"),
+    db.execute<OptionRow[]>("SELECT id,name FROM cmcom010 ORDER BY name"),
+    db.execute<(OptionRow & { provinceId: number })[]>("SELECT id,name,cmcom010_id AS provinceId FROM cmcom011 ORDER BY name"),
   ]);
   return {
+    provinces: provinces[0].map(optionMap), districts: districts[0].map(row => ({ ...optionMap(row), provinceId: Number(row.provinceId) })),
     education: education[0].map((row) => ({ id: Number(row.id), institution: row.insi ?? "", subject: row.subs ?? "", year: Number(row.gdyr ?? 0), honor: row.honr ?? "", details: row.dsca ?? "", educationTypeId: Number(row.uredu020_id), visibilityId: Number(row.urpms010_id) })),
     educationOverview: educationOverview[0].map((row) => ({ id: Number(row.id), details: row.dsca ?? "", visibilityId: Number(row.urpms010_id) })),
     profession: profession[0].map((row) => ({ id: Number(row.id), details: row.dsca ?? "", visibilityId: Number(row.urpms010_id) })),
@@ -45,7 +48,7 @@ export async function getProfileDetails(userId: number): Promise<ProfileDetails>
   };
 }
 
-async function assertOption(connectionHandle: PoolConnection, table: "uredu020" | "urcon011" | "ursoc011" | "urpms010", id: number): Promise<void> {
+async function assertOption(connectionHandle: PoolConnection, table: "uredu020" | "urcon011" | "ursoc011" | "urpms010" | "cmcom010", id: number): Promise<void> {
   const [rows] = await connectionHandle.execute<RowDataPacket[]>(`SELECT id FROM ${table} WHERE id=? LIMIT 1`, [id]);
   if (!rows[0]) throw new Error("INVALID_LOOKUP");
 }
@@ -71,7 +74,7 @@ export async function saveProfileDetail(input: { userId: number; actorId: number
       await assertOption(connectionHandle, "uredu020", educationTypeId);
       const values = [String(input.values.institution), String(input.values.subject), Number(input.values.year), String(input.values.honor), String(input.values.details), educationTypeId, visibilityId];
       if (input.itemId) await connectionHandle.execute("UPDATE uredu010 SET insi=?,subs=?,gdyr=?,honr=?,dsca=?,uredu020_id=?,urpms010_id=? WHERE id=? AND crby_tbl_users=?", [...values, input.itemId, input.userId]);
-      else { const [result] = await connectionHandle.execute<ResultSetHeader>("INSERT INTO uredu010 (insi,subs,gdyr,honr,dsca,uredu020_id,crby_tbl_users,urpms010_id,orby) VALUES (?,?,?,?,?,?,?,?,?)", [...values, input.userId, await nextOrder(connectionHandle, "uredu010", input.userId)]); recordId = Number(result.insertId); }
+      else { const [result] = await connectionHandle.execute<ResultSetHeader>("INSERT INTO uredu010 (insi,subs,gdyr,honr,dsca,uredu020_id,urpms010_id,crby_tbl_users,orby) VALUES (?,?,?,?,?,?,?,?,?)", [...values, input.userId, await nextOrder(connectionHandle, "uredu010", input.userId)]); recordId = Number(result.insertId); }
     } else if (input.section === "educationOverview" || input.section === "profession" || input.section === "academic") {
       table = "urprf060";
       const type = input.section === "educationOverview" ? "Education" : input.section === "profession" ? "Profession" : "Academic";
@@ -82,7 +85,12 @@ export async function saveProfileDetail(input: { userId: number; actorId: number
       table = "urcon010";
       const contactTypeId = Number(input.values.contactTypeId);
       await assertOption(connectionHandle, "urcon011", contactTypeId);
-      const values = [String(input.values.name), String(input.values.details), String(input.values.address), Number(input.values.provinceId), Number(input.values.districtId), String(input.values.postcode), String(input.values.telephone), String(input.values.mobile), String(input.values.email), contactTypeId, visibilityId, String(input.values.gps), String(input.values.mapUrl), String(input.values.url)];
+      if (Number(input.values.provinceId)) await assertOption(connectionHandle, "cmcom010", Number(input.values.provinceId));
+      if (Number(input.values.districtId)) {
+        const [districts] = await connectionHandle.execute<RowDataPacket[]>("SELECT id FROM cmcom011 WHERE id=? AND cmcom010_id=?", [Number(input.values.districtId), Number(input.values.provinceId)]);
+        if (!districts[0]) throw new Error("INVALID_LOOKUP");
+      }
+      const values = [String(input.values.name), String(input.values.details), String(input.values.address), Number(input.values.provinceId) || null, Number(input.values.districtId) || null, String(input.values.postcode), String(input.values.telephone), String(input.values.mobile), String(input.values.email), contactTypeId, visibilityId, String(input.values.gps), String(input.values.mapUrl), String(input.values.url)];
       if (input.itemId) await connectionHandle.execute("UPDATE urcon010 SET name=?,dsca=?,addr=?,cmcom010_id=?,cmcom011_id=?,zip=?,teln=?,mobl=?,emal=?,urcon011_id=?,urpms010_id=?,gpsc=?,urlm=?,url=? WHERE id=? AND crby_tbl_users=?", [...values, input.itemId, input.userId]);
       else { const [result] = await connectionHandle.execute<ResultSetHeader>("INSERT INTO urcon010 (name,dsca,addr,cmcom010_id,cmcom011_id,zip,teln,mobl,emal,urcon011_id,urpms010_id,crby_tbl_users,gpsc,urlm,url) VALUES (?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)", [...values.slice(0, 11), input.userId, ...values.slice(11)]); recordId = Number(result.insertId); }
     } else {

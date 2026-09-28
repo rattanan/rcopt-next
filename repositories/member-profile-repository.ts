@@ -1,3 +1,4 @@
+import { createLegacyMd5Password, verifyLegacyMd5Password } from "@/lib/auth/legacy-password";
 import type { ResultSetHeader, RowDataPacket } from "mysql2/promise";
 import { db } from "@/lib/db";
 import { writeLegacyAudit } from "@/lib/admin-write";
@@ -38,4 +39,20 @@ export async function updateOwnMemberProfile(input: { userId: number; email: str
   } finally {
     connection.release();
   }
+}
+
+export async function updateOwnMemberPassword(input: { userId: number; currentPassword: string; newPassword: string; address: string }): Promise<boolean> {
+  const connection = await db.getConnection();
+  try {
+    await connection.beginTransaction();
+    const [rows] = await connection.execute<(RowDataPacket & { password: string })[]>("SELECT password FROM tbl_users WHERE id=? AND status=1 FOR UPDATE", [input.userId]);
+    if (!rows[0] || !verifyLegacyMd5Password(input.currentPassword, rows[0].password)) {
+      await connection.rollback();
+      return false;
+    }
+    await connection.execute("UPDATE tbl_users SET password=? WHERE id=? AND status=1", [createLegacyMd5Password(input.newPassword), input.userId]);
+    await writeLegacyAudit(connection, { model: "TblUsers", action: "Update", recordId: input.userId, actorId: input.userId, address: input.address, summary: "member changed own password" });
+    await connection.commit();
+    return true;
+  } catch (error) { await connection.rollback(); throw error; } finally { connection.release(); }
 }

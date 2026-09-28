@@ -1,5 +1,6 @@
 "use server";
 
+import { FileLoginRateLimiter } from "@/lib/auth/login-rate-limit";
 import { headers } from "next/headers";
 import { revalidatePath } from "next/cache";
 import { redirect } from "next/navigation";
@@ -9,7 +10,7 @@ import { destroyMemberSession } from "@/lib/auth/member-session";
 import { env } from "@/lib/env";
 import { clientAddress } from "@/lib/public-request-protection";
 import { isTrustedRequestOrigin } from "@/lib/request-origin";
-import { updateOwnMemberProfile } from "@/repositories/member-profile-repository";
+import { updateOwnMemberProfile, updateOwnMemberPassword } from "@/repositories/member-profile-repository";
 
 const profileSchema = z.object({
   title: z.string().trim().max(15),
@@ -42,4 +43,26 @@ export async function updateProfile(_previous: ProfileActionState, formData: For
 export async function logoutMember(): Promise<void> {
   await destroyMemberSession();
   redirect("/");
+}
+
+export async function changeMemberPassword(_previous: ProfileActionState, formData: FormData): Promise<ProfileActionState> {
+  const member = await requireActiveMember();
+  const requestHeaders = await headers();
+  if (!env.ADMIN_WRITE_ENABLED) return { error: "ระบบแก้ไขข้อมูลยังไม่เปิดใช้งาน" };
+  if (!isTrustedRequestOrigin(requestHeaders, [new URL(env.SITE_URL).host])) return { error: "คำขอไม่ถูกต้อง กรุณาโหลดหน้าใหม่" };
+  const parsed = z.object({ currentPassword: z.string().min(1).max(256), newPassword: z.string().min(12).max(256), confirmPassword: z.string() }).safeParse(Object.fromEntries(formData));
+  if (!parsed.success) return { error: "กรุณากรอกรหัสผ่านปัจจุบัน และรหัสผ่านใหม่อย่างน้อย 12 ตัวอักษร" };
+  if (parsed.data.newPassword !== parsed.data.confirmPassword) return { error: "รหัสผ่านใหม่และการยืนยันไม่ตรงกัน" };
+  if (parsed.data.newPassword === parsed.data.currentPassword) return { error: "กรุณาใช้รหัสผ่านใหม่ที่ต่างจากรหัสผ่านปัจจุบัน" };
+  const limiter = new FileLoginRateLimiter(env.ADMIN_LOGIN_RATE_LIMIT_STORE_PATH);
+  const subject = `password-change:${member.userId}:${clientAddress(requestHeaders)}`;
+  try {
+    if (!(await limiter.allowed(subject))) return { error: "ลองหลายครั้งเกินไป กรุณารอ 15 นาทีแล้วลองใหม่" };
+    if (!(await updateOwnMemberPassword({ userId: member.userId, ...parsed.data, address: clientAddress(requestHeaders) }))) {
+      await limiter.failed(subject);
+      return { error: "รหัสผ่านปัจจุบันไม่ถูกต้อง" };
+    }
+    await limiter.succeeded(subject);
+    return { success: "เปลี่ยนรหัสผ่านเรียบร้อยแล้ว" };
+  } catch { return { error: "ไม่สามารถเปลี่ยนรหัสผ่านได้ กรุณาลองใหม่อีกครั้ง" }; }
 }
