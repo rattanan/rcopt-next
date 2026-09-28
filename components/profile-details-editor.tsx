@@ -1,6 +1,7 @@
 "use client";
 
 import Image from "next/image";
+import { useProfileForm } from "@/lib/hooks/use-profile-form";
 import { useActionState, useEffect, useState } from "react";
 import { useRouter } from "next/navigation";
 import { BookOpen, BriefcaseBusiness, FileText, ImagePlus, Mail, Plus, Save, Share2, Trash2 } from "lucide-react";
@@ -14,10 +15,10 @@ const label = "block text-sm font-bold text-[var(--ink)]";
 type Action = (state: ProfileDetailsActionState, formData: FormData) => Promise<ProfileDetailsActionState>;
 
 function StateForm({ action, className = "", children }: { action: Action; className?: string; children: React.ReactNode }) {
-  const [state, formAction, pending] = useActionState(action, initialState);
+  const { ref, state, formAction, pending, onChange } = useProfileForm(action);
   const router = useRouter();
-  useEffect(() => { if (state.success) router.refresh(); }, [router, state.success]);
-  return <form action={formAction} className={className} encType={action === saveGallery ? "multipart/form-data" : undefined}>{children}{state.error && <p className="mt-3 rounded-lg bg-[#fff0f4] px-3 py-2 text-sm text-[#9b2f59]" role="alert">{state.error}</p>}{state.success && <p className="mt-3 rounded-lg bg-emerald-50 px-3 py-2 text-sm text-emerald-800" role="status">{state.success}</p>}<button type="submit" disabled={pending} className="mt-4 inline-flex items-center gap-2 rounded-lg bg-[var(--primary)] px-4 py-2.5 text-sm font-bold text-white hover:bg-[var(--primary-dark)] disabled:opacity-60"><Save size={16} />{pending ? "กำลังบันทึก…" : "บันทึก"}</button></form>;
+  useEffect(() => { if (state.success) router.refresh(); }, [router, state]);
+  return <form ref={ref} onChange={onChange} action={formAction} className={className} encType={action === saveGallery ? "multipart/form-data" : undefined}>{children}{state.error && <p className="mt-3 rounded-lg bg-[#fff0f4] px-3 py-2 text-sm text-[#9b2f59]" role="alert">{state.error}</p>}{state.success && <p className="mt-3 rounded-lg bg-emerald-50 px-3 py-2 text-sm text-emerald-800" role="status">{state.success}</p>}<button type="submit" disabled={pending} className="mt-4 inline-flex items-center gap-2 rounded-lg bg-[var(--primary)] px-4 py-2.5 text-sm font-bold text-white hover:bg-[var(--primary-dark)] disabled:opacity-60"><Save size={16} />{pending ? "กำลังบันทึก…" : "บันทึก"}</button></form>;
 }
 
 function DeleteButton({ section, itemId, targetUserId }: { section: "education" | "educationOverview" | "profession" | "academic" | "contact" | "social" | "gallery"; itemId: number; targetUserId?: number }) {

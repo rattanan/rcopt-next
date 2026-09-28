@@ -1,16 +1,15 @@
 "use client";
 
-import { useActionState } from "react";
+import { useProfileForm } from "@/lib/hooks/use-profile-form";
 import { Save } from "lucide-react";
-import { updateProfile, type ProfileActionState } from "@/app/profile/actions";
+import { updateProfile } from "@/app/profile/actions";
 import type { MemberProfile } from "@/repositories/member-profile-repository";
 
-const initialState: ProfileActionState = {};
 const inputClass = "h-12 w-full rounded-xl border border-[var(--border)] bg-white px-4 outline-none transition focus:border-[var(--primary)] focus:ring-2 focus:ring-[var(--primary-light)]";
 
 export function MemberProfileForm({ profile }: { profile: MemberProfile }) {
-  const [state, action, pending] = useActionState(updateProfile, initialState);
-  return <form action={action} className="mt-7 grid gap-5">
+  const { ref, state, formAction: action, pending, onChange } = useProfileForm(updateProfile);
+  return <form ref={ref} onChange={onChange} action={action} className="mt-7 grid gap-5">
     <div className="grid gap-5 sm:grid-cols-[140px_1fr_1fr]">
       <div><label htmlFor="title" className="mb-2 block text-sm font-bold">คำนำหน้า</label><input id="title" name="title" defaultValue={profile.title ?? ""} maxLength={15} className={inputClass} /></div>
       <div><label htmlFor="firstName" className="mb-2 block text-sm font-bold">ชื่อ <span className="text-[var(--primary)]">*</span></label><input id="firstName" name="firstName" defaultValue={profile.firstname ?? ""} required maxLength={50} autoComplete="given-name" className={inputClass} /></div>

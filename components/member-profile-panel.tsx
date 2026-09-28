@@ -1,7 +1,7 @@
 "use client";
 
 import Image from "next/image";
-import { useActionState, useState } from "react";
+import { useActionState, useRef, useState } from "react";
 import { ArrowLeft, KeyRound, Pencil } from "lucide-react";
 import { MemberProfileForm } from "./member-profile-form";
 import { ProfileDetailsEditor } from "./profile-details-editor";
@@ -29,12 +29,13 @@ const empty = <p className="text-[var(--muted)]">ยังไม่มีข้�
 
 export function MemberProfilePanel({ profile, details }: { profile: MemberProfile; details: ProfileDetails }) {
   const [mode, setMode] = useState<"view" | "edit" | "password">("view");
+  const panelRef = useRef<HTMLDivElement>(null);
   const portrait = details.gallery.find(row => row.isProfilePicture);
   const visibility = (id: number) => <span className="mt-2 inline-block rounded-full bg-[var(--secondary)] px-3 py-1 text-xs text-[var(--muted)]">{details.visibility.find(row => row.id === id)?.name || "ไม่ระบุการแสดงผล"}</span>;
-  return <div>
+  return <div ref={panelRef}>
     <div className="mb-6 flex flex-wrap items-center justify-between gap-3">
       <h2 className="text-xl font-extrabold">{mode === "edit" ? "แก้ไขโปรไฟล์" : mode === "password" ? "เปลี่ยนรหัสผ่าน" : "โปรไฟล์ของฉัน"}</h2>
-      <div className="flex flex-wrap gap-2">{mode === "view" ? <><button className="button-primary gap-2" onClick={() => setMode("edit")}><Pencil size={17} />แก้ไขโปรไฟล์</button><button className={button} onClick={() => setMode("password")}><KeyRound size={17} />เปลี่ยนรหัสผ่าน</button></> : <button className={button} onClick={() => { if (mode !== "edit" || window.confirm("กลับไปดูโปรไฟล์? ข้อมูลที่ยังไม่ได้กดบันทึกจะไม่ถูกเก็บ")) setMode("view"); }}><ArrowLeft size={17} />กลับไปดูโปรไฟล์</button>}</div>
+      <div className="flex flex-wrap gap-2">{mode === "view" ? <><button className="button-primary gap-2" onClick={() => setMode("edit")}><Pencil size={17} />แก้ไขโปรไฟล์</button><button className={button} onClick={() => setMode("password")}><KeyRound size={17} />เปลี่ยนรหัสผ่าน</button></> : <button className={button} onClick={() => { if (panelRef.current?.querySelector('form[data-pending="true"]')) { window.alert("กำลังบันทึกข้อมูล กรุณารอสักครู่"); return; } if (!panelRef.current?.querySelector('form[data-unsaved="true"]') || window.confirm("กลับไปดูโปรไฟล์? ข้อมูลที่ยังไม่ได้กดบันทึกจะไม่ถูกเก็บ")) setMode("view"); }}><ArrowLeft size={17} />กลับไปดูโปรไฟล์</button>}</div>
     </div>
     {mode === "password" ? <PasswordForm /> : mode === "edit" ? <><p className="text-sm text-[var(--muted)]">แก้ไขข้อมูลแล้วกดบันทึกในแต่ละส่วน เลือกหัวข้อด้านล่างเพื่อเปิดฟอร์ม</p><MemberProfileForm profile={profile} /><ProfileDetailsEditor details={details} /></> : <div className="grid gap-5">
       <Section title="ข้อมูลส่วนตัว"><div className="flex flex-wrap items-start gap-5">{portrait && <Image src={portrait.imageUrl} alt="รูปโปรไฟล์" width={96} height={96} unoptimized className="h-24 w-24 rounded-2xl object-cover" />}<dl className="grid flex-1 gap-4 sm:grid-cols-2">{[["ชื่อ–นามสกุล", [profile.title, profile.firstname, profile.lastname].filter(Boolean).join(" ")], ["อีเมล", profile.email], ["เพศ", profile.sex === 1 ? "ชาย" : profile.sex === 2 ? "หญิง" : "ไม่ระบุ"], ...(profile.memtype === 2 ? [["เลขที่ใบประกอบวิชาชีพเวชกรรม", profile.licn]] : [])].map(([label, value]) => <div key={label}><dt className="text-[var(--muted)]">{label}</dt><dd className="break-words font-bold">{value || "ยังไม่ระบุ"}</dd></div>)}</dl></div></Section>
