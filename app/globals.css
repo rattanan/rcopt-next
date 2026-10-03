@@ -37,3 +37,6 @@
 .doctor-map-country strong { font-size: 24px; line-height: 1.3; }
 .doctor-map-empty .doctor-map-count { background: #766f74; }
 .doctor-map-marker:focus-visible { outline: 3px solid #242124; outline-offset: 3px; border-radius: 50%; }
+.legacy-content { max-width: 100%; overflow-x: auto; overflow-wrap: anywhere; }
+.legacy-content img, .legacy-content iframe { max-width: 100%; }
+.legacy-content img { height: auto; }
