@@ -5,15 +5,15 @@ import { normalizePagination } from "@/lib/pagination";
 
 export type ContentKind = "article" | "news";
 export type ContentCategory = { id: number; name: string };
-export type PublicContent = { id: number; title: string; excerpt: string | null; body?: string; category: ContentCategory; imagePath: string | null; publishedAt: string; featured: boolean };
+export type PublicContent = { id: number; title: string; excerpt: string | null; body?: string; category: ContentCategory; imagePath: string | null; publishedAt: string; updatedAt: string; featured: boolean };
 
-type ContentRow = RowDataPacket & { id: number; title: string; intro: string | null; body?: string; category_id: number; category_name: string; image_path: string | null; published_at: string; featured: "Yes" | "No" };
+type ContentRow = RowDataPacket & { id: number; title: string; intro: string | null; body?: string; category_id: number; category_name: string; image_path: string | null; published_at: string; updated_at?: string; featured: "Yes" | "No" };
 
 const NEWS_CATEGORY_ID = 1;
 export function isPublishedLegacyContent(value: string): boolean { return value === "Yes"; }
 
 export function mapContentRow(row: ContentRow): PublicContent {
-  return { id: row.id, title: row.title, excerpt: row.intro, body: row.body, category: { id: row.category_id, name: row.category_name }, imagePath: row.image_path, publishedAt: row.published_at, featured: row.featured === "Yes" };
+  return { id: row.id, title: row.title, excerpt: row.intro, body: row.body, category: { id: row.category_id, name: row.category_name }, imagePath: row.image_path, publishedAt: row.published_at, updatedAt: row.updated_at || row.published_at, featured: row.featured === "Yes" };
 }
 
 function getKindWhere(kind: ContentKind): string {
@@ -25,6 +25,7 @@ export async function listPublicContent(input: { kind: ContentKind; categoryId?:
   const { pageSize, offset } = normalizePagination(input.page, input.pageSize ?? 12, 30);
   const conditions = ["a.pubd = 'Yes'", getKindWhere(input.kind)];
   const values: (number | string)[] = [];
+  if (input.kind === "news") conditions.push("a.crdt >= DATE_SUB(CURRENT_DATE(), INTERVAL 3 YEAR)");
   if (input.categoryId && input.kind === "article") { conditions.push("a.arcat010_id = ?"); values.push(input.categoryId); }
   if (input.keyword?.trim()) {
     conditions.push("(a.name LIKE ? ESCAPE '!' OR a.intro LIKE ? ESCAPE '!')");
@@ -35,10 +36,10 @@ export async function listPublicContent(input: { kind: ContentKind; categoryId?:
   const [countRows] = await db.execute<RowDataPacket[]>(`SELECT COUNT(*) AS total FROM arart010 a WHERE ${where}`, values);
   const [rows] = await db.execute<ContentRow[]>(`
     SELECT a.id, a.name AS title, a.intro, a.arcat010_id AS category_id, c.name AS category_name,
-           a.pimg AS image_path, a.crdt AS published_at, a.fetd AS featured
+           a.pimg AS image_path, a.crdt AS published_at, CASE WHEN a.lmdt >= '1000-01-01' THEN a.lmdt ELSE a.crdt END AS updated_at, a.fetd AS featured
     FROM arart010 a INNER JOIN arcat010 c ON c.id = a.arcat010_id
     WHERE ${where}
-    ORDER BY a.awtp ASC, a.crdt DESC, a.id DESC
+    ORDER BY ${input.kind === "news" ? "a.crdt DESC" : "a.awtp ASC, a.crdt DESC"}, a.id DESC
     LIMIT ${pageSize} OFFSET ${offset}
   `, values);
   return { rows: rows.map(mapContentRow), total: Number(countRows[0]?.total ?? 0) };
@@ -48,7 +49,7 @@ export async function findPublicContentById(id: number): Promise<PublicContent |
   await connection();
   const [rows] = await db.execute<ContentRow[]>(`
     SELECT a.id, a.name AS title, a.intro, a.body, a.arcat010_id AS category_id, c.name AS category_name,
-           a.pimg AS image_path, a.crdt AS published_at, a.fetd AS featured
+           a.pimg AS image_path, a.crdt AS published_at, CASE WHEN a.lmdt >= '1000-01-01' THEN a.lmdt ELSE a.crdt END AS updated_at, a.fetd AS featured
     FROM arart010 a INNER JOIN arcat010 c ON c.id = a.arcat010_id
     WHERE a.id = ? AND a.pubd = 'Yes'
     LIMIT 1
@@ -64,7 +65,7 @@ export async function getArticleCategories(): Promise<ContentCategory[]> {
 
 export async function getHomepageContent(): Promise<{ news: PublicContent[]; articles: PublicContent[] }> {
   const [news, articles] = await Promise.all([
-    listPublicContent({ kind: "news", page: 1, pageSize: 3 }),
+    listPublicContent({ kind: "news", page: 1, pageSize: 10 }),
     listPublicContent({ kind: "article", page: 1, pageSize: 3 }),
   ]);
   return { news: news.rows, articles: articles.rows };

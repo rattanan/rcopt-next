@@ -37,3 +37,38 @@ export async function getDoctorLookups(): Promise<{ specialties: DoctorLookup[];
   const [provinces] = await db.query<DoctorLookup[]>("SELECT id, name FROM cmcom010 ORDER BY name");
   return { specialties, provinces };
 }
+
+export type DoctorMapProvince = { id: number; name: string; count: number; center: [number, number] | null };
+export type DoctorMapOverview = { total: number; unlocated: number; provinces: DoctorMapProvince[] };
+
+export async function getDoctorMapOverview(): Promise<DoctorMapOverview> {
+  const { default: centers } = await import("@/data/thai-province-centers.json");
+  // Match the public directory's eligibility and workplace visibility rules.
+  // A doctor may have several public workplaces, but is counted once per province.
+  const [provinceRows] = await db.query<(RowDataPacket & { id: number; name: string; total: number })[]>(`
+    SELECT c.id, c.name, COUNT(DISTINCT eligible.user_id) AS total
+    FROM cmcom010 c
+    LEFT JOIN urprf030 w ON w.cmcom010_id = c.id AND w.urpms010_id = 1
+    LEFT JOIN (
+      SELECT p.user_id FROM tbl_profiles p
+      INNER JOIN tbl_users u ON u.id = p.user_id WHERE p.memtype = 2 AND u.status = 1
+    ) eligible ON eligible.user_id = w.crby_tbl_users
+    GROUP BY c.id, c.name ORDER BY c.name
+  `);
+  const [totals] = await db.query<(RowDataPacket & { total: number; unlocated: number })[]>(`
+    SELECT COUNT(DISTINCT p.user_id) AS total,
+      COUNT(DISTINCT CASE WHEN NOT EXISTS (
+        SELECT 1 FROM urprf030 w INNER JOIN cmcom010 c ON c.id = w.cmcom010_id
+        WHERE w.crby_tbl_users = p.user_id AND w.urpms010_id = 1
+      ) THEN p.user_id END) AS unlocated
+    FROM tbl_profiles p INNER JOIN tbl_users u ON u.id = p.user_id
+    WHERE p.memtype = 2 AND u.status = 1
+  `);
+  return {
+    total: Number(totals[0]?.total ?? 0), unlocated: Number(totals[0]?.unlocated ?? 0),
+    provinces: provinceRows.map((row) => {
+      const point = (centers as Record<string, number[]>)[row.name.trim()];
+      return { id: Number(row.id), name: row.name, count: Number(row.total), center: point?.length === 2 ? [point[0], point[1]] as [number, number] : null };
+    }),
+  };
+}

@@ -1,3 +1,4 @@
+import { prepareSiteMenu } from "@/lib/site-menu";
 import { connection } from "next/server";
 import type { RowDataPacket } from "mysql2";
 import { db } from "@/lib/db";
@@ -72,5 +73,5 @@ export async function getPublicMenu(): Promise<SiteMenuItem[]> {
     if (parent) parent.children.push(item);
   }
 
-  return rootItems;
+  return prepareSiteMenu(rootItems);
 }
