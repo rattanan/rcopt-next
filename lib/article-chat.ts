@@ -19,6 +19,7 @@ export function searchTerms(value: string): string[] {
   return [...new Set([...segmenter.segment(value.toLowerCase())].filter(s => s.isWordLike).map(s => s.segment).filter(s => s.length > 1 && !ignoredTerms.has(s)))].slice(0, 20);
 }
 export function rankArticles(articles: ChatArticle[], question: string, previous: string, articleId?: number): ChatArticle[] {
+  if (articleId && /บทความ(?:นี้|ที่กำลังอ่าน)|this article/iu.test(question)) return articles.filter(article => article.id === articleId);
   const terms = searchTerms(question);
   const contextTerms = searchTerms(previous);
   return articles.map(article => {

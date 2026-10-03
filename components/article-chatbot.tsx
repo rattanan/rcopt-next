@@ -52,7 +52,7 @@ export function ArticleChatbot() {
       <div className="min-h-0 flex-1 overflow-y-auto overscroll-contain bg-[#fcf9fb] px-4 py-5">
         <div className="mb-5 rounded-2xl rounded-tl-sm border border-[var(--border)] bg-white p-4 text-sm leading-7"><p className="font-semibold">สวัสดีค่ะ มีเรื่องไหนให้ช่วยค้นหาคะ?</p><p className="mt-1 text-[var(--muted)]">ถามเรื่องสุขภาพตาหรือเลือกหัวข้อด้านล่าง ฉันจะช่วยสรุปพร้อมบทความให้อ่านต่อค่ะ</p>
           <div className="mt-3 flex flex-wrap gap-2">{topics.map(topic => <button type="button" key={topic} disabled={busy} onClick={() => void send(`ขอความรู้เรื่อง${topic}จากบทความ`)} className="rounded-full border border-[var(--border)] px-3 py-1.5 text-xs font-semibold text-[var(--primary-dark)] hover:bg-pink-50 disabled:opacity-50">{topic}</button>)}</div>
-          {articleId && <button type="button" disabled={busy} onClick={() => void send("ช่วยสรุปบทความที่กำลังอ่านให้เข้าใจง่าย")} className="mt-3 flex items-center gap-2 text-sm font-bold text-[var(--primary-dark)] disabled:opacity-50"><BookOpen size={16} /> สรุปบทความนี้</button>}
+
         </div>
         <div role="log" aria-label="บทสนทนากับผู้ช่วย RCOPT" aria-live="polite" aria-relevant="additions" className="space-y-4">
           {messages.map((message, index) => <div key={index} className={message.role === "user" ? "ml-8" : "mr-2"}>
@@ -66,6 +66,7 @@ export function ArticleChatbot() {
         <div ref={end} />
       </div>
       <div className="shrink-0 border-t border-[var(--border)] bg-white p-4">
+        {articleId && <button type="button" disabled={busy} onClick={() => void send("ช่วยสรุปบทความที่กำลังอ่านให้เข้าใจง่าย")} className="mb-3 flex items-center gap-2 text-sm font-bold text-[var(--primary-dark)] disabled:opacity-50"><BookOpen size={16} /> สรุปบทความนี้</button>}
         <div className="mb-3 flex flex-wrap gap-x-3 gap-y-2">{chatActions.map(action => <Link key={action.href} href={action.href} onClick={close} className="text-xs font-semibold text-[var(--primary-dark)] underline-offset-2 hover:underline">{action.label} ↗</Link>)}</div>
         <form onSubmit={event => { event.preventDefault(); void send(draft); }} className="flex items-center gap-2 rounded-2xl border border-[var(--border)] bg-[#fcf9fb] p-2 focus-within:ring-2 focus-within:ring-[var(--primary)]">
           <input ref={input} aria-label="พิมพ์คำถามถึงผู้ช่วย" placeholder="พิมพ์คำถามของคุณ…" maxLength={1200} value={draft} onChange={event => setDraft(event.target.value)} className="min-w-0 flex-1 bg-transparent px-2 py-2 text-base outline-none" />
