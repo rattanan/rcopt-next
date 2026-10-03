@@ -32,7 +32,9 @@ export function sanitizeLegacyHtml(value: string | null | undefined): string {
 }
 
 export function formatThaiDate(value: string | Date): string {
-  return new Intl.DateTimeFormat("th-TH", { dateStyle: "long" }).format(new Date(value));
+  const date = new Date(value);
+  if (Number.isNaN(date.getTime())) return "ไม่ระบุวันที่";
+  return new Intl.DateTimeFormat("th-TH", { dateStyle: "long" }).format(date);
 }
 
 export function redactPublicContactInfo(value: string): string {

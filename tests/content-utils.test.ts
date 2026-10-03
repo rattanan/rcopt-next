@@ -10,6 +10,12 @@ describe("legacy content utilities", () => {
     expect(stripLegacyHtml("<p>  ข้อความ <strong>ทดสอบ</strong></p>")).toBe("ข้อความ ทดสอบ");
   });
 
+  it("handles missing and zero dates in legacy articles", () => {
+    expect(formatThaiDate("0000-00-00 00:00:00")).toBe("ไม่ระบุวันที่");
+    expect(formatThaiDate("")).toBe("ไม่ระบุวันที่");
+    expect(formatThaiDate(new Date(NaN))).toBe("ไม่ระบุวันที่");
+  });
+
   it("formats published dates for Thai readers", () => {
     expect(formatThaiDate("2026-07-09T00:00:00+07:00")).toContain("2569");
   });
