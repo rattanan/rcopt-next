@@ -25,3 +25,35 @@ describe("chat API", () => {
     try { const response = await POST(new Request("https://rcopt.example/api/chat",{method:"POST",body:JSON.stringify({message:"ต้อกระจก"})})); const data=await response.json(); expect(response.status).toBe(200); expect(data.sources.map((s: {id:number})=>s.id)).toEqual([1]); expect(JSON.parse(fetchMock.mock.calls[0][1].body).model).toBe("configured-model"); } finally { vi.unstubAllEnvs(); vi.unstubAllGlobals(); }
   });
 });
+
+describe("Thai language enforcement", () => {
+  const chinese = { answer: "ขออภัย，目前提供的文章沒有資料", sourceIds: [], suggestions: ["ต้อหิน"] };
+  const thai = { answer: "บทความที่พบยังไม่มีรายละเอียดเรื่องความเสี่ยงของต้อหินค่ะ", sourceIds: [], suggestions: ["อ่านบทความเกี่ยวกับต้อหิน"] };
+  const completion = (reply: unknown) => Response.json({ choices: [{ finish_reason: "stop", message: { content: JSON.stringify(reply) } }] });
+  async function run(replies: unknown[]) {
+    vi.stubEnv("OPENAI_API_URL", "https://ai.example/v1"); vi.stubEnv("OPENAI_API_KEY", "test-key"); vi.stubEnv("OPENAI_MODEL", "configured-model");
+    vi.mocked(getChatArticles).mockResolvedValue(articles);
+    const mock = vi.fn(); replies.forEach(reply => mock.mockResolvedValueOnce(completion(reply))); vi.stubGlobal("fetch", mock);
+    try {
+      const result = await POST(new Request("https://rcopt.example/api/chat", { method: "POST", body: JSON.stringify({ message: "ต้อหินมีความเสี่ยงอย่างไร?", history: [{ role: "assistant", content: chinese.answer }] }) }));
+      return { data: await result.json(), calls: mock.mock.calls };
+    } finally { vi.unstubAllEnvs(); vi.unstubAllGlobals(); }
+  }
+  it("repairs mixed Chinese and Thai, excluding corrupted assistant history", async () => {
+    const { data, calls } = await run([chinese, thai]);
+    expect(data.answer).toBe(thai.answer); expect(calls).toHaveLength(2);
+    expect(JSON.parse(calls[0][1].body).messages.some((m: {content:string}) => m.content === chinese.answer)).toBe(false);
+  });
+  it("checks suggestions even when the answer is Thai", async () => {
+    const { data, calls } = await run([{ ...thai, suggestions: ["如何預防青光眼"] }, thai]);
+    expect(data.suggestions).toEqual(thai.suggestions); expect(calls).toHaveLength(2);
+  });
+  it("returns a fixed Thai fallback after a failed language repair", async () => {
+    const { data, calls } = await run([chinese, chinese]);
+    expect(data.answer).toContain("ภาษาไทย"); expect(data.answer).not.toMatch(/\p{Script=Han}/u); expect(data.sources).toEqual([]); expect(calls).toHaveLength(2);
+  });
+  it("allows English medical terms in Thai prose without retrying", async () => {
+    const { data, calls } = await run([{ ...thai, answer: "บทความกล่าวถึงต้อหิน (glaucoma)" }]);
+    expect(data.answer).toContain("glaucoma"); expect(calls).toHaveLength(1);
+  });
+});

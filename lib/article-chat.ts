@@ -48,3 +48,15 @@ export function completionUrl(value: string): string {
   if (!url.pathname.endsWith("/chat/completions")) url.pathname += "/chat/completions";
   return url.toString();
 }
+
+// Require Thai prose while allowing English medical terms and abbreviations.
+export function isThaiChatText(text: string): boolean {
+  return /[\u0E01-\u0E5B]/u.test(text) && !/\p{Script=Han}|\p{Script=Hiragana}|\p{Script=Katakana}|\p{Script=Hangul}/u.test(text);
+}
+export function isThaiChatReply(reply: ReturnType<typeof parseChatReply>): boolean {
+  return isThaiChatText(reply.answer) && reply.suggestions.every(isThaiChatText);
+}
+export const thaiChatFallback = {
+  answer: "ขณะนี้ยังเรียบเรียงคำตอบภาษาไทยได้ไม่สมบูรณ์ กรุณาลองถามอีกครั้ง หรือเลือกเปิดคลังบทความด้านล่างค่ะ",
+  sources: [], suggestions: ["ต้อกระจก", "ต้อหิน", "การดูแลสุขภาพตา"], actions: chatActions,
+};
