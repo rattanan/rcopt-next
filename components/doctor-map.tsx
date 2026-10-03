@@ -45,6 +45,7 @@ export function DoctorMap({ overview, selectedProvinceId }: { overview: DoctorMa
         const marker = L.marker(province.center, { icon: L.divIcon({ html: markerContent(province.name, province.count), className: `doctor-map-marker${province.count === 0 ? " doctor-map-empty" : ""}`, iconSize: [40, 40], iconAnchor: [20, 20] }), title: label, alt: label, keyboard: true });
         const tooltip = document.createElement("span"); tooltip.textContent = label;
         marker.bindTooltip(tooltip, { direction: "top" });
+        marker.on("add", () => marker.getElement()?.setAttribute("aria-label", label));
         marker.on("click", () => router.push(`/doctors/map?province=${province.id}#province-results`));
         marker.addTo(provincesLayer); provinceMarkers.current.set(province.id, marker);
       }
@@ -66,6 +67,8 @@ export function DoctorMap({ overview, selectedProvinceId }: { overview: DoctorMa
     if (marker) {
       map.current.setView(marker.getLatLng(), 9);
       marker.openTooltip();
+      // Streaming navigation may resolve the hash before the result list is ready.
+      document.getElementById("province-results")?.scrollIntoView({ block: "start", behavior: window.matchMedia("(prefers-reduced-motion: reduce)").matches ? "auto" : "smooth" });
     }
   }, [selectedProvinceId, ready]);
 
