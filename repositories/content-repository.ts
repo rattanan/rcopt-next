@@ -20,12 +20,17 @@ function getKindWhere(kind: ContentKind): string {
   return kind === "news" ? "a.arcat010_id = 1" : "a.arcat010_id <> 1";
 }
 
-export async function listPublicContent(input: { kind: ContentKind; categoryId?: number; page: number; pageSize?: number }): Promise<{ rows: PublicContent[]; total: number }> {
+export async function listPublicContent(input: { kind: ContentKind; categoryId?: number; page: number; pageSize?: number; keyword?: string }): Promise<{ rows: PublicContent[]; total: number }> {
   await connection();
   const { pageSize, offset } = normalizePagination(input.page, input.pageSize ?? 12, 30);
   const conditions = ["a.pubd = 'Yes'", getKindWhere(input.kind)];
-  const values: number[] = [];
+  const values: (number | string)[] = [];
   if (input.categoryId && input.kind === "article") { conditions.push("a.arcat010_id = ?"); values.push(input.categoryId); }
+  if (input.keyword?.trim()) {
+    conditions.push("(a.name LIKE ? ESCAPE '!' OR a.intro LIKE ? ESCAPE '!')");
+    const term = `%${input.keyword.trim().replace(/[!%_]/gu, "!$&")}%`;
+    values.push(term, term);
+  }
   const where = conditions.join(" AND ");
   const [countRows] = await db.execute<RowDataPacket[]>(`SELECT COUNT(*) AS total FROM arart010 a WHERE ${where}`, values);
   const [rows] = await db.execute<ContentRow[]>(`
