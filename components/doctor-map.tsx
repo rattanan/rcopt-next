@@ -21,7 +21,7 @@ export function DoctorMap({ overview, selectedProvinceId }: { overview: DoctorMa
     void import("leaflet").then((L) => {
       if (disposed || !container.current) return;
       const data: DoctorMapOverview = JSON.parse(overviewJSON);
-      const instance = L.map(container.current, { scrollWheelZoom: false, minZoom: 4, maxZoom: 12 });
+      const instance = L.map(container.current, { scrollWheelZoom: false, zoomSnap: 0.5, minZoom: 4, maxZoom: 12 });
       map.current = instance;
       instance.fitBounds([[5.6, 97.3], [20.5, 105.8]], { padding: [20, 20] });
       const tiles = L.tileLayer("https://tile.openstreetmap.org/{z}/{x}/{y}.png", {
@@ -45,7 +45,7 @@ export function DoctorMap({ overview, selectedProvinceId }: { overview: DoctorMa
         const marker = L.marker(province.center, { icon: L.divIcon({ html: markerContent(province.name, province.count), className: `doctor-map-marker${province.count === 0 ? " doctor-map-empty" : ""}`, iconSize: [40, 40], iconAnchor: [20, 20] }), title: label, alt: label, keyboard: true });
         const tooltip = document.createElement("span"); tooltip.textContent = label;
         marker.bindTooltip(tooltip, { direction: "top" });
-        marker.on("click", () => router.push(`/doctors/map?province=${province.id}#province-results`, { scroll: false }));
+        marker.on("click", () => router.push(`/doctors/map?province=${province.id}#province-results`));
         marker.addTo(provincesLayer); provinceMarkers.current.set(province.id, marker);
       }
       const updateLayers = () => {

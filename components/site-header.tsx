@@ -18,7 +18,7 @@ export async function SiteHeader() {
         </Link>
         <div className="flex items-center gap-2 sm:gap-3">
           <NavigationMenu items={menu} accountHref={identity?.href} accountLabel={identity ? `Hi, ${identity.firstName}` : undefined} />
-          {identity ? <Link href={identity.href} className="hidden items-center gap-2 rounded-xl bg-[var(--primary-light)] px-3 py-2 text-sm font-bold text-[var(--primary-dark)] sm:inline-flex"><UserRound size={16} />Hi, {identity.firstName}</Link> : <Link href="/login" className="hidden items-center gap-2 rounded-xl border border-[var(--border)] px-3 py-2 text-sm font-bold text-[var(--primary-dark)] hover:bg-[var(--primary-light)] sm:inline-flex"><LogIn size={16} />เข้าสู่ระบบ</Link>}
+          {identity ? <Link href={identity.href} className="hidden shrink-0 items-center gap-2 whitespace-nowrap rounded-xl bg-[var(--primary-light)] px-3 py-2 text-sm font-bold text-[var(--primary-dark)] sm:inline-flex"><UserRound size={16} />Hi, {identity.firstName}</Link> : <Link href="/login" className="hidden shrink-0 items-center gap-2 whitespace-nowrap rounded-xl border border-[var(--border)] px-3 py-2 text-sm font-bold text-[var(--primary-dark)] hover:bg-[var(--primary-light)] sm:inline-flex"><LogIn size={16} />เข้าสู่ระบบ</Link>}
         </div>
       </div>
     </header>

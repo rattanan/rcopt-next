@@ -14,7 +14,8 @@ for (const item of updates) {
 const db = await mysql.createConnection({ host: process.env.DB_HOST, port: Number(process.env.DB_PORT || 3306), user: process.env.DB_USER, password: process.env.DB_PASSWORD, database: process.env.DB_NAME, dateStrings: true });
 try {
   await db.beginTransaction();
-  const [rows] = await db.execute(`SELECT id,name,intro,body,lmdt,pubd,arcat010_id FROM arart010 WHERE id IN (${updates.map(() => "?").join(",")}) FOR UPDATE`, updates.map((item) => item.id));
+  // Text protocol preserves legacy zero DATETIME strings exactly as exported.
+  const [rows] = await db.query(`SELECT id,name,intro,body,lmdt,pubd,arcat010_id FROM arart010 WHERE id IN (${updates.map(() => "?").join(",")}) FOR UPDATE`, updates.map((item) => item.id));
   const pending = [];
   for (const item of updates) {
     const row = rows.find((row) => row.id === item.id);
