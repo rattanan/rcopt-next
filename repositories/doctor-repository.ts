@@ -3,7 +3,7 @@ import { db } from "../lib/db";
 import { normalizePagination } from "@/lib/pagination";
 
 export type DoctorSearch = { keyword?: string; hospital?: string; provinceId?: number; specialtyId?: number; page: number; pageSize: number };
-export type Doctor = RowDataPacket & { user_id: number; title: string | null; firstname: string; lastname: string; licn: string | null; photoPath: string | null };
+export type Doctor = RowDataPacket & { user_id: number; title: string | null; firstname: string; lastname: string; licn: string | null; photoPath: string | null; workplaceNames?: string[] };
 export type DoctorLookup = RowDataPacket & { id: number; name: string };
 export type DoctorProfile = Doctor & { specialties: string[]; workplaces: Array<{ name: string; province: string | null }> };
 
@@ -20,6 +20,19 @@ export async function findDoctors(input: DoctorSearch): Promise<{ rows: Doctor[]
   // MySQL 8.4 fixture rejects bound LIMIT/OFFSET parameters. These values are
   // normalized numeric values inside the repository, never request strings.
   const [rows] = await db.execute<Doctor[]>(`SELECT p.user_id, p.title, p.firstname, p.lastname, p.licn, (SELECT photo.pict FROM ursoc020 photo WHERE photo.crby_tbl_users = p.user_id AND photo.pfpt = 'Yes' AND photo.urpms010_id = 1 ORDER BY photo.id ASC LIMIT 1) AS photoPath FROM tbl_profiles p INNER JOIN tbl_users u ON u.id = p.user_id WHERE ${where} ORDER BY p.lastname, p.firstname, p.user_id LIMIT ${pageSize} OFFSET ${offset}`, values);
+  if (input.provinceId && rows.length) {
+    const ids = rows.map((doctor) => doctor.user_id);
+    const [workplaces] = await db.execute<(RowDataPacket & { user_id: number; name: string | null })[]>(
+      `SELECT w.crby_tbl_users AS user_id, w.name FROM urprf030 w WHERE w.urpms010_id = 1 AND w.cmcom010_id = ? AND w.crby_tbl_users IN (${ids.map(() => "?").join(", ")}) ORDER BY w.orby, w.id`,
+      [input.provinceId, ...ids],
+    );
+    for (const doctor of rows) {
+      doctor.workplaceNames = [...new Set(workplaces
+        .filter((workplace) => workplace.user_id === doctor.user_id)
+        .map((workplace) => workplace.name?.trim())
+        .filter((name): name is string => Boolean(name)))];
+    }
+  }
   return { rows, total: Number(countRows[0]?.total ?? 0) };
 }
 

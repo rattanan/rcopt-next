@@ -1,8 +1,8 @@
 import { describe, expect, it, vi } from "vitest";
 import centers from "@/data/thai-province-centers.json";
-const query = vi.hoisted(() => vi.fn());
-vi.mock("@/lib/db", () => ({ db: { query } }));
-import { getDoctorMapOverview } from "@/repositories/doctor-repository";
+const { query, execute } = vi.hoisted(() => ({ query: vi.fn(), execute: vi.fn() }));
+vi.mock("@/lib/db", () => ({ db: { query, execute } }));
+import { findDoctors, getDoctorMapOverview } from "@/repositories/doctor-repository";
 
 describe("doctor map aggregation", () => {
   it("has valid coordinate pairs for all 77 provinces", () => {
@@ -24,5 +24,35 @@ describe("doctor map aggregation", () => {
       expect(sql).toContain("w.urpms010_id = 1");
       expect(sql).toContain("p.memtype = 2 AND u.status = 1");
     }
+  });
+});
+
+
+describe("province doctor workplaces", () => {
+  it("loads public hospitals in the selected province and groups unique names per doctor", async () => {
+    execute.mockResolvedValueOnce([[{ total: 2 }]])
+      .mockResolvedValueOnce([[{ user_id: 7 }, { user_id: 8 }]])
+      .mockResolvedValueOnce([[
+        { user_id: 7, name: " โรงพยาบาล ก " },
+        { user_id: 7, name: "โรงพยาบาล ก" },
+        { user_id: 7, name: "โรงพยาบาล ข" },
+        { user_id: 8, name: " " },
+        { user_id: 8, name: null },
+      ]]);
+    const result = await findDoctors({ provinceId: 14, page: 1, pageSize: 12 });
+    expect(result.rows.map((doctor) => doctor.workplaceNames)).toEqual([["โรงพยาบาล ก", "โรงพยาบาล ข"], []]);
+    const [sql, parameters] = execute.mock.calls.at(-1)!;
+    expect(sql).toContain("w.urpms010_id = 1");
+    expect(sql).toContain("w.cmcom010_id = ?");
+    expect(sql).toContain("w.crby_tbl_users IN (?, ?)");
+    expect(parameters).toEqual([14, 7, 8]);
+    execute.mockReset();
+  });
+
+  it("skips hospital loading for empty province results", async () => {
+    execute.mockResolvedValueOnce([[{ total: 0 }]]).mockResolvedValueOnce([[]]);
+    expect(await findDoctors({ provinceId: 14, page: 1, pageSize: 12 })).toEqual({ rows: [], total: 0 });
+    expect(execute).toHaveBeenCalledTimes(2);
+    execute.mockReset();
   });
 });
