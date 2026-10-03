@@ -18,5 +18,4 @@ export default async function Home() { let content: { news: PublicContent[]; art
   <VideoSection />
   <SponsorSection />
   <SocialLinks />
- <script src="https://line.rattanan.dev/embed/chat-widget.js" data-widget-token="e426858b3685d5357f14e9f5a6250a69b9eeeb0c23bfab35583f637693a3cc14" async></script>
  </main><SiteFooter /></>; }
