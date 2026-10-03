@@ -3,7 +3,7 @@
 import { useEffect, useRef, useState } from "react";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
-import { MessageCircle, X, Send, ArrowUpRight, RotateCcw, LoaderCircle, BookOpen } from "lucide-react";
+import { MessageCircle, X, Send, ArrowUpRight, RotateCcw, LoaderCircle, BookOpen, Maximize2, Minimize2 } from "lucide-react";
 import { chatActions, type ChatSource } from "@/lib/article-chat";
 
 type Message = { role: "user" | "assistant"; content: string; sources?: ChatSource[]; suggestions?: string[] };
@@ -12,6 +12,7 @@ const topics = ["ต้อกระจก", "ต้อหิน", "การด�
 export function ArticleChatbot() {
   const pathname = usePathname();
   const [open, setOpen] = useState(false);
+  const [expanded, setExpanded] = useState(false);
   const [messages, setMessages] = useState<Message[]>([]);
   const [draft, setDraft] = useState("");
   const [busy, setBusy] = useState(false);
@@ -25,7 +26,7 @@ export function ArticleChatbot() {
   useEffect(() => { if (open) end.current?.scrollIntoView({ block: "nearest" }); }, [messages, busy, error, open]);
   useEffect(() => () => pending.current?.abort(), []);
   if (/^\/(admin|member|login|register|api)(\/|$)/u.test(pathname)) return null;
-  function close() { setOpen(false); launcher.current?.focus(); }
+  function close() { setOpen(false); requestAnimationFrame(() => launcher.current?.focus()); }
   async function send(text: string) {
     const message = text.trim();
     if (!message || pending.current) return;
@@ -42,11 +43,12 @@ export function ArticleChatbot() {
     } finally { pending.current = null; setBusy(false); }
   }
   return <div className="fixed bottom-4 right-4 z-[1200] sm:bottom-6 sm:right-6">
-    {open && <section id="article-assistant" role="dialog" aria-labelledby="assistant-title" onKeyDown={event => { if (event.key === "Escape") { event.stopPropagation(); close(); } }} className="mb-3 flex h-[min(650px,calc(100dvh-110px))] w-[min(400px,calc(100vw-32px))] flex-col overflow-hidden rounded-3xl border border-[var(--border)] bg-white text-[var(--ink)] shadow-[0_18px_70px_rgba(80,25,50,.24)]">
-      <header className="flex shrink-0 items-center gap-3 bg-[var(--primary-dark)] px-5 py-4 text-white">
-        <span className="rounded-2xl bg-white/15 p-2"><MessageCircle size={23} aria-hidden="true" /></span>
-        <div className="flex-1"><h2 id="assistant-title" className="font-bold">ผู้ช่วย RCOPT</h2><p className="text-xs text-white/85">ค้นคำตอบจากบทความของเรา</p></div>
+    {open && <section id="article-assistant" role="dialog" aria-labelledby="assistant-title" onKeyDown={event => { if (event.key === "Escape") { event.stopPropagation(); close(); } }} className={`flex flex-col overflow-hidden rounded-3xl border border-[var(--border)] bg-white text-[var(--ink)] shadow-[0_18px_70px_rgba(80,25,50,.24)] ${expanded ? "fixed inset-2 mx-auto max-w-[1100px] sm:inset-6" : "mb-3 h-[min(650px,calc(100dvh-110px))] w-[min(400px,calc(100vw-32px))]"}`}>
+      <header className="flex shrink-0 items-center gap-2 bg-[var(--primary-dark)] px-3 py-4 sm:px-5 text-white">
+        <span className="hidden rounded-2xl bg-white/15 p-2 min-[380px]:block"><MessageCircle size={23} aria-hidden="true" /></span>
+        <div className="min-w-0 flex-1"><h2 id="assistant-title" className="font-bold">ผู้ช่วย RCOPT</h2><p className="text-xs text-white/85">ค้นคำตอบจากบทความของเรา</p></div>
         <button type="button" onClick={() => { setMessages([]); setError(""); setDraft(""); input.current?.focus(); }} disabled={busy} aria-label="เริ่มบทสนทนาใหม่" className="rounded-full p-2 hover:bg-white/15 disabled:opacity-40"><RotateCcw size={17} /></button>
+        <button type="button" onClick={() => setExpanded(value => !value)} aria-label={expanded ? "คืนขนาดหน้าต่างแชต" : "ขยายหน้าต่างแชต"} title={expanded ? "คืนขนาดหน้าต่างแชต" : "ขยายหน้าต่างแชต"} aria-pressed={expanded} className="shrink-0 rounded-full p-2 hover:bg-white/15 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-white">{expanded ? <Minimize2 size={18} /> : <Maximize2 size={18} />}</button>
         <button type="button" onClick={close} aria-label="ปิดแชต" className="rounded-full p-2 hover:bg-white/15"><X size={21} /></button>
       </header>
       <div className="min-h-0 flex-1 overflow-y-auto overscroll-contain bg-[#fcf9fb] px-4 py-5">
@@ -75,6 +77,6 @@ export function ArticleChatbot() {
         <p className="mt-2 text-[10px] leading-4 text-[var(--muted)]">คำตอบจาก AI เพื่อความรู้ ไม่ทดแทนการตรวจโดยแพทย์<br />หลีกเลี่ยงการส่งข้อมูลส่วนตัวหรือประวัติสุขภาพที่ระบุตัวตน</p>
       </div>
     </section>}
-    <div className="flex justify-end"><button ref={launcher} type="button" onClick={() => open ? close() : setOpen(true)} aria-expanded={open} aria-controls="article-assistant" aria-label={open ? "ย่อผู้ช่วย RCOPT" : "เปิดผู้ช่วย RCOPT"} className="flex items-center gap-2 rounded-full bg-[var(--primary-dark)] px-5 py-4 font-semibold text-white shadow-lg transition hover:-translate-y-0.5 focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-[var(--primary)]">{open ? <X size={23} /> : <MessageCircle size={23} />}<span className="text-sm">{open ? "ย่อแชต" : "สอบถาม RCOPT"}</span></button></div>
+    <div className={open && expanded ? "hidden" : "flex justify-end"}><button ref={launcher} type="button" onClick={() => open ? close() : setOpen(true)} aria-expanded={open} aria-controls="article-assistant" aria-label={open ? "ย่อผู้ช่วย RCOPT" : "เปิดผู้ช่วย RCOPT"} className="flex items-center gap-2 rounded-full bg-[var(--primary-dark)] px-5 py-4 font-semibold text-white shadow-lg transition hover:-translate-y-0.5 focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-[var(--primary)]">{open ? <X size={23} /> : <MessageCircle size={23} />}<span className="text-sm">{open ? "ย่อแชต" : "สอบถาม RCOPT"}</span></button></div>
   </div>;
 }
